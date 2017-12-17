@@ -90,7 +90,7 @@ How to install:
 
     # required to compile certain files
     npm install -g handlebars typescript
-    git clone https://github.com/someguy123/LiteVault.git
+    git clone https://github.com/p0ns/ChauchaVault.git
     # install dependancies in the repo dir
     cd LiteVault
     npm install
