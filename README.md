@@ -1,22 +1,27 @@
-LiteVault
+ChauchaVault
 --------
 Official Site: https://www.litevault.net
 
-LiteVault was designed to give Litecoin a site like Blockchain.info, meaning a trustless wallet with client-side transaction signing, private key storage etc.
+ChauchaVault was designed to give Chaucha a site like Blockchain.info, meaning a trustless wallet with client-side transaction signing, private key storage etc.
 
 The initial version was developed in whole by Someguy123, as well as certain further updates.
 
+On December 17, 2017 LiteVault was forked into ChauchaVault by p0ns for use with Chaucha.cl
+
 ## Donations
 
-Please be aware that LiteVault does not sell anything, we don't run ads, we run PURELY from donations. Please donate if you find the service, or the source code useful.
+Please be aware that ChauchaVault does not sell anything, we don't run ads, we run PURELY from donations. Please donate if you find the service, or the source code useful.
 
+Donations to ChauchaVault:
+CHA: cfghBTap2DAGG7x8YwtdU9dRXmDL8aqd9x
+
+Donations to LiteVault:
 BTC: 17PPTHmS8N34KYKdDc4Gn1psabteGS8EE3
-
 LTC: LNWEjx3DKSAWKX5fkWfCwa2tWSQeo7ZmnR
 
-## Licence
+## License
 
-IMPORTANT: Litevault is **not under an open licence**. The source code is available to allow public contribution, security analysis, and for educational purposes, but **DOES NOT allow you to run your own version of Litevault** without permission from Someguy123.
+IMPORTANT: Litevault is **not under an open license**. The source code is available to allow public contribution, security analysis, and for educational purposes, but **DOES NOT allow you to run your own version of Litevault** without permission from Someguy123.
 
 You are allowed to:
 
@@ -36,6 +41,10 @@ You **MAY NOT**:
 This licence may change at any time by Someguy123's discretion.
 
 Full licence details in the file `LICENCE`
+
+In email communication, on December 17 2017, Someguy123 has granted
+permission to fork LiteVault into ChauchaVault as long as all the code is released opensource
+and attribution is kept on the site.
 
 ## About
 
