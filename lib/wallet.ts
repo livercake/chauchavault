@@ -35,6 +35,7 @@ interface TransactionArray {
     [name: number]: CoinTransaction;
 }
 interface CoinTransaction {
+    address: string;
     tx: string;
     time_utc: string;
     confirmations: number;
@@ -75,12 +76,16 @@ class Wallet {
     protected delAddressListeners = [];
 
 
-    public coin_network = Bitcoin.networks.litecoin;
+    public coin_network = Bitcoin.networks.chaucha;
+
+    public block_explorer_url = "http://explorer.chaucha.orionx.io";
+
+    public coin_symbol = "CHA";
 
     public CryptoConfig = {
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Iso10126,
-        iterations: 5
+        iterations: 7
     };
 
     constructor(identifier : string, password : string) {
@@ -223,41 +228,37 @@ class Wallet {
             callback({});
             return;
         }
-        $.get('/wallet/getbalances/' + addrstring, function(data) {
-            if(data.status == "success") {
-                // clear balance array
-                _this.balances = {};
-                // If you supply multiple addresses, then it's an array
-                // not an object; Thanks Blockr for the inconsistency...
-                if (Array.isArray(data.data)) {
-                    for(var v in data.data) {
-                        var addr_data = data.data[v];
-                        _this.setBalance(addr_data['address'], addr_data['balance']);
-                    }
-                } else {
-                    _this.setBalance(data.data['address'], data.data['balance']);
-                }
-                callback(this.balances);
-            } else {
-                alert('Uh oh, something went wrong calculating your balances');
-            }
-        }, "json");
+        for(var v in this.addresses) {
+          (function(addr) {
+            $.get(_this.block_explorer_url+'/api/addr/{addr}/balance'.replace('{addr}',addr))
+            .then(function(data) {
+              var bal = parseInt(data);
+              bal = bal / 10e7;
+              _this.setBalance(addr, bal);
+              callback(_this.balances);
+            })
+          })(v);
+        }
     }
 
     getUnspent(address, callback) {
-        $.get('/wallet/getunspent/' + address, function(data) {
-            console.log(data);
-            // put into window var
-            var output;
+      //$.get('/wallet/getunspent/' + address, function (data) {
+      //OBSOLETES: getunspent
+      var _this = this;
+      $.get(_this.block_explorer_url+'/api/addr/'+address+'/utxo', function (data) {
+        var unspent = data.map(function(utxo){
+          return {
+            "tx": utxo.txid,
+              "amount": utxo.amount,
+              "n": utxo.vout,
+              "confirmations": utxo.confirmations,
+              "script": utxo.scriptPubKey
+          }
+        })
 
-            // blockr's API is inconsistent and returns a bare object
-            // if there's only one unspent. We fix that and return an array ALWAYS.
-            if(Array.isArray(data.data.unspent)) {
-                callback(data.data.unspent);
-            } else {
-                callback([data.data.unspent]);
-            }
-        }, "json");
+        console.log(unspent);
+        callback(unspent);
+      }, "json");
     }
 
     /**
@@ -324,21 +325,91 @@ class Wallet {
         }
     }
 
-    sortTransactions(transactions : TransactionWrapperArray) {
+    sortTransactions(transactions) {
+        // var allTransactions = [];
+        // for(var v in transactions) {
+        //     for(var t in transactions[v].txs) {
+        //         var newTx = transactions[v].txs[t];
+        //         newTx['address'] = transactions[v].address;
+        //         allTransactions.push(newTx);
+        //     }
+        // }
+        // return allTransactions;
+        // interface TransactionContainer {
+        //     address: string;
+        //     limit_txs: number;
+        //     nb_txs: number;
+        //     nb_txs_displayed: number;
+        //     txs: TransactionArray;
+        // }
+        var _this = this;
         var allTransactions = [];
-        for(var v in transactions) {
-            for(var t in transactions[v].txs) {
-                var newTx = transactions[v].txs[t];
-                newTx['address'] = transactions[v].address;
-                allTransactions.push(newTx);
+        var myAddresses = Object.keys(this.addresses);
+
+        transactions.forEach( function(t){
+          var address;
+          var amtTransacted;
+          var vout;
+          var sendVout;
+          var input = t.vin[0];
+          var fee = t.valueIn - t.valueOut;
+
+          // if input is in my addresses, this is a send
+          if(myAddresses.indexOf( input.addr ) > -1 ){
+            address = input.addr;
+            t.vout.forEach( function(o){
+              if( address !== o.scriptPubKey.addresses[0] ) sendVout = o;
+            })
+            amtTransacted = -((+sendVout.value) + fee);
+            var time = Date.now();
+            if(t.time && t.time>0){
+              time = (t.time-1)*1000;
             }
-        }
+            console.log(t.time);
+            console.log("time ",time);
+            allTransactions.push({
+              time_utc: time,
+              address: address,
+              amount: amtTransacted.toFixed(8),
+              confirmations: t.confirmations,
+              tx: t.txid,
+              coin_symbol: _this.coin_symbol
+            });
+          }
+
+          t.vout.forEach( function(o){
+            if(myAddresses.indexOf(o.scriptPubKey.addresses[0]) > -1) vout = o;
+          })
+          if(vout && vout.scriptPubKey.addresses[0] !== address){ // is a receive from somewhere external, but isnt change
+            address = vout.scriptPubKey.addresses[0];
+            amtTransacted = +vout.value;
+            var time = Date.now();
+            if(t.time && t.time>0){
+              time = (t.time-1)*1000;
+            }
+            console.log(t.time);
+            console.log("time ",time);
+            allTransactions.push({
+              time_utc: time,
+              address: address,
+              amount: amtTransacted.toFixed(8),
+              confirmations: t.confirmations,
+              tx: t.txid,
+              coin_symbol: _this.coin_symbol
+            });
+          }
+        })
+        console.log("total balance: "+ allTransactions.reduce( function(acc, t){
+          return acc+t.amount;
+        }, 0))
         return allTransactions;
     }
     getTransactions(callback) {
         var _this = this;
-        $.get('/wallet/addresstxs/' + Object.keys(this.addresses).join(), function(data) {
-            callback(_this.sortTransactions(Array.isArray(data.data) ? data.data : [data.data]));
+        var addys = Object.keys(this.addresses)
+        // $.get('/wallet/addresstxs/' + Object.keys(this.addresses).join(), function(data) {
+        $.get(_this.block_explorer_url+'/api/addrs/'+addys.join(",")+"/txs?to=50",  function (data) {
+            data && data.items && data.items.length && callback(_this.sortTransactions(data.items));
         }, "json");
     }
 
@@ -361,7 +432,7 @@ class Wallet {
                     var totalUnspent : number = parseInt((data.total * Math.pow(10, 8)).toString());
                     amount = parseInt((amount * Math.pow(10,8)).toString());
                     if(amount < minFeePerKb) {
-                        alert("You must send at least 0.001 LTC (otherwise your transaction may get rejected)");
+                        alert("You must send at least 0.001 "+_this.coin_symbol+" (otherwise your transaction may get rejected)");
                         return;
                     }
                     console.log('Sending ' + amount + ' satoshis from ' + fromAddress + ' to ' + toAddress + ' unspent amt: ' + totalUnspent);
@@ -372,10 +443,10 @@ class Wallet {
                     tx.addOutput(toAddress, amount);
                     console.log(tx);
                     var estimatedFee = _this.coin_network.estimateFee(tx);
-                    if(estimatedFee > 0) {
-                        // Temporary fix for "stuck" transactions
-                        estimatedFee = estimatedFee * 3;
-                    }
+                    // if(estimatedFee > 0) {
+                    //     // Temporary fix for "stuck" transactions
+                    //     estimatedFee = estimatedFee * 3;
+                    // }
                     if((amount + estimatedFee) > totalUnspent) {
                         alert("Can't fit fee of " + estimatedFee / Math.pow(10,8) + " - lower your sending amount");
                         console.log('WARNING: Total is greater than total unspent: %s - Actual Fee: %s', totalUnspent, estimatedFee);
@@ -426,15 +497,16 @@ class Wallet {
 
     pushTX(tx, callback = function(data) {}) {
         var _this = this;
-        $.post('/wallet/pushtx', {hex: tx}, function(data) {
-            if(data.status !== "success") {
+        $.post(_this.block_explorer_url+'/api/tx/send', { rawtx: tx }, function (data) {
+            if (!('txid' in data)) {
                 alert('There was an error pushing your transaction. May be a temporary problem, please try again later.');
-            } else {
+            }
+            else {
                 callback(data);
                 _this.callTransactionPushedListeners(data);
             }
             _this.refreshBalances();
-        },"json").fail(function() {
+        }, "json").fail(function () {
             alert('There was an error pushing your transaction. May be a temporary problem, please try again later.');
         });
     }
@@ -573,7 +645,7 @@ function renderTransactions() {
     if (Object.keys(wallet.addresses).length > 0) {
         wallet.getTransactions(function (data) {
             $('#list-transactions').html(
-                Handlebars.templates['transactions']({transactions: data})
+                Handlebars.templates['transactions']({transactions: data, coin_symbol: wallet.coin_symbol})
             );
         });
     } else {
@@ -595,10 +667,37 @@ function colorTag(address) {
     tags += '</div>';
     return tags;
 }
+function listAddressCallbacks(){
+  $('#list-addresses').on("click", ".deleteaddr-btn", function() {
+      var theAddress = this.parentElement.parentElement.attributes['data-address'].value;
+      $('#deletingAddress').html(theAddress);
+      $('#deleteAddressModal').modal('toggle');
+  });
+
+  $('#list-addresses .viewkey-btn').click(function() {
+      var address = $(this).parent().parent().attr('data-address');
+      var privkey = wallet.addresses[address].priv;
+      $('#privkey-showtext').val(privkey);
+      $('#privkeyModal').modal('toggle');
+  });
+
+  $('#list-addresses .signkey-btn').click(function() {
+      var address = $(this).parent().parent().attr('data-address');
+      $('#signmessage-address').html(address);
+      $('#signMessageModal').modal('toggle');
+  });
+
+  $('#list-addresses .qr-btn').click(function() {
+      var address = $(this).parent().parent().attr('data-address');
+      $('#qrcode-img').attr('src', 'https://someguy123.com/coinwidget/qr/?address=litecoin:' + address);
+      $('#qrcode-address').html(address);
+      $('#qrcodeModal').modal('toggle');
+  });
+}
 function initializeWallet(wallet) {
 
     wallet.load(function() {
-        $('.ltc-balance').html('0 LTC');
+        $('.ltc-balance').html('0 '+wallet.coin_symbol);
         pulseAlerts();
 
         setInterval(pulseAlerts, 30000);
@@ -614,11 +713,12 @@ function initializeWallet(wallet) {
             console.log('address listener called');
             console.log(a);
             console.log(b);
-            $('#list-addresses').html(Handlebars.templates['addresses']({addresses: wallet.addresses}));
+            $('#list-addresses').html(Handlebars.templates['addresses']({addresses: wallet.addresses,coin_symbol:wallet.coin_symbol}));
             renderAddresses();
+            listAddressCallbacks();
         });
         wallet.registerBalanceChangeListener(function(balances) {
-            $('.ltc-balance').html(wallet.getTotalBalance().toFixed(5));
+            $('.ltc-balance').html(wallet.getTotalBalance().toFixed(5)+" "+wallet.coin_symbol);
             renderAddresses();
         });
         wallet.registerDelAddressListener(function(address) {
@@ -626,7 +726,7 @@ function initializeWallet(wallet) {
         });
         wallet.registerTransactionPushedListener(function(data) {
             console.log(data);
-            $('#txModalTXID').html(data.data);
+            $('#txModalTXID').html(data.txid);
             $('#txModal').modal('toggle');
             renderTransactions();
         });
@@ -659,11 +759,8 @@ function initializeWallet(wallet) {
             }
         });
 
-        $('#list-addresses').on("click", ".deleteaddr-btn", function() {
-            var theAddress = this.parentElement.parentElement.attributes['data-address'].value;
-            $('#deletingAddress').html(theAddress);
-            $('#deleteAddressModal').modal('toggle');
-        });
+        listAddressCallbacks()
+
         $('#i-am-sure-delete').click(function() {
             wallet.removeAddress($('#deletingAddress').html());
             for (var v in $('#list-addresses').children()) {
@@ -676,25 +773,7 @@ function initializeWallet(wallet) {
             }
         });
 
-        $('#list-addresses .viewkey-btn').click(function() {
-            var address = $(this).parent().parent().attr('data-address');
-            var privkey = wallet.addresses[address].priv;
-            $('#privkey-showtext').val(privkey);
-            $('#privkeyModal').modal('toggle');
-        });
 
-        $('#list-addresses .signkey-btn').click(function() {
-            var address = $(this).parent().parent().attr('data-address');
-            $('#signmessage-address').html(address);
-            $('#signMessageModal').modal('toggle');
-        });
-
-        $('#list-addresses .qr-btn').click(function() {
-            var address = $(this).parent().parent().attr('data-address');
-            $('#qrcode-img').attr('src', 'https://someguy123.com/coinwidget/qr/?address=litecoin:' + address);
-            $('#qrcode-address').html(address);
-            $('#qrcodeModal').modal('toggle');
-        });
 
         $('#sign-message-btn').click(function() {
             var address = $('#signmessage-address').html();
@@ -844,15 +923,15 @@ function renderAddresses() {
     for(var v in wallet.balances) {
         var cld = myAddr.children('[value="'+v+'"]');
         if(cld.length > 0) {
-            cld[0].innerHTML = v+" ("+wallet.balances[v]+" LTC)";
+            cld[0].innerHTML = v+" ("+wallet.balances[v]+" "+wallet.coin_symbol+")";
         } else {
-            myAddr.append('<option value="' + v + '">' + v + " (" + wallet.balances[v] + " LTC)</option>");
+            myAddr.append('<option value="' + v + '">' + v + " (" + wallet.balances[v] + " "+wallet.coin_symbol+")</option>");
         }
         // update balance in the address table
         balance = $('tr[data-address='+v+']');
         if(balance.length > 0) {
             balance = balance[0].children[1];
-            balance.innerHTML = wallet.balances[v];
+            balance.innerHTML = wallet.balances[v] +" "+wallet.coin_symbol;
         }
     }
 }
@@ -923,35 +1002,45 @@ $('#identifier-txt,#password-txt,#password-txt-confirm').keypress(function(e) {
 });
 
 // Silence typescript
-interface Window { audioContext: any; webkitAudioContext: any; }
+interface Window { AudioContext: any; webkitAudioContext: any; }
 
 var beep = (function () {
 
     try {
-        var ctx = new(window.audioContext || window.webkitAudioContext);
+        var ctx = new(window.AudioContext || window.webkitAudioContext);
         return function (duration, type, finishedCallback = function() {}) {
-    
+
             duration = +duration;
-    
+
             // Only 0-4 are valid types.
             type = (type % 5) || 0;
-    
+
             if (typeof finishedCallback != "function") {
                 finishedCallback = function () {};
             }
-    
+
             var osc = ctx.createOscillator();
-    
+
             osc.type = type;
-    
+
             osc.connect(ctx.destination);
-            osc.noteOn(0);
-    
+            if (osc.start) {
+                osc.start(0);
+            }
+            else {
+                osc.noteOn(0);
+            }
+
             setTimeout(function () {
-                osc.noteOff(0);
+              if (osc.stop) {
+                  osc.stop(0);
+              }
+              else {
+                  osc.noteOff(0);
+              }
                 finishedCallback();
             }, duration);
-    
+
         };
     } catch(e) {
         console.error('beep not supported?: ', e);
@@ -996,4 +1085,8 @@ Handlebars.registerHelper('timeSince', function(time) {
 
 Handlebars.registerHelper('colortag', function(address) {
     return new Handlebars.SafeString(colorTag(address));
+});
+
+Handlebars.registerHelper('coin_symbol', function(address) {
+    return wallet.coin_symbol;
 });

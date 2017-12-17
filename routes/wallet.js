@@ -37,18 +37,18 @@ function inObject(obj) {
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    res.render('wallet/index', { title: 'LiteVault Wallet' });
+    res.render('wallet/index', { title: 'ChauchaVault Wallet' });
 });
 
 router.get('/create', function(req, res) {
-    res.render('wallet/create', { title: 'LiteVault Register' });
+    res.render('wallet/create', { title: 'ChauchaVault Register' });
 });
 
 router.get('/login', function(req, res) {
-    res.render('wallet/login', { title: 'LiteVault Login' });
+    res.render('wallet/login', { title: 'ChauchaVault Login' });
 });
 router.get('/forgot2fa', function(req, res) {
-    res.render('wallet/forgot2fa', { title: 'LiteVault Forgot 2FA' });
+    res.render('wallet/forgot2fa', { title: 'ChauchaVault Forgot 2FA' });
 });
 
 function db_error(res, message) {
@@ -236,7 +236,7 @@ router.post('/read_account', function(req, res) {
 
 
 router.get('/gauth_create', function(req, res) {
-    res.json({error:false, data: s.generate_key({length: 20, google_auth_qr: true, name: "LiteVault Wallet"})});
+    res.json({error:false, data: s.generate_key({length: 20, google_auth_qr: true, name: "ChauchaVault Wallet"})});
 });
 
 router.post('/gauth_create', function(req, res) {

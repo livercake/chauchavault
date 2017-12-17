@@ -1,6 +1,6 @@
 <div class="logged_header main_header single">
     <h1>
-        <span class="pull-right ltc-balance hidden-xs" id="ltc-balance">0.00</span>
+        <span class="pull-right ltc-balance hidden-xs" id="ltc-balance">0.0000 {{coin_symbol}}</span>
     </h1>
 
     <div class="container">
@@ -64,36 +64,15 @@
                     multiple transactions in a short period of time. This is because you cannot send
                     unconfirmed coins yet.</div>
 
-                    <div class="well">
-                        This service is not ran as a business and relies on the community to keep it alive. If you use the service, please
-                        donate, even just $1 in Litecoins contribute towards development time, and server costs.<br/>
-                        <br/>
-                        Donate to Litevault to keep us running: <br/><br/>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Litecoin</h4>
-                            </div>
-                            <div class="panel-body">
-                                LNWEjx3DKSAWKX5fkWfCwa2tWSQeo7ZmnR
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Bitcoin</h4>
-                            </div>
-                            <div class="panel-body">
-                                17PPTHmS8N34KYKdDc4Gn1psabteGS8EE3
-                            </div>
-                        </div>
-                    </div>
-                    <h4>Exchange Rates</h4>
+
+                    <!-- <h4>Exchange Rates</h4>
                     <ul id="exchange-rates">
                         <li>Under Construction</li>
-                    </ul>
+                    </ul> -->
                 </div>
 
                 <div class="col-md-6">
-                    <h4>Send LTC</h4>
+                    <h4>Send {{coin_symbol}}</h4>
                     <div class="input-group-lg">
                         <label for="from-address">From Address</label>
                         <select name="my-addresses" id="select-my-addresses" class="form-control"></select>
@@ -115,7 +94,33 @@
 
                     <hr/>
                     <button class="btn btn-default" id="send-coins-btn">Send Coins</button>
+                    &nbsp;
                 </div>
+
+                <!-- <div class="col-md-6">
+                  <div class="well">
+                      This service is not ran as a business and relies on the community to keep it alive. If you use the service, please
+                      donate, even just $1 in Litecoins contribute towards development time, and server costs.<br/>
+                      <br/>
+                      Donate to Litevault to keep us running: <br/><br/>
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              <h4 class="panel-title">Litecoin</h4>
+                          </div>
+                          <div class="panel-body">
+                              LNWEjx3DKSAWKX5fkWfCwa2tWSQeo7ZmnR
+                          </div>
+                      </div>
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              <h4 class="panel-title">Bitcoin</h4>
+                          </div>
+                          <div class="panel-body">
+                              17PPTHmS8N34KYKdDc4Gn1psabteGS8EE3
+                          </div>
+                      </div>
+                  </div>
+                </div> -->
             </div>
         </div>
         <div class="tab-pane" id="tab_import_export">

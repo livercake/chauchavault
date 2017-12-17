@@ -1,12 +1,12 @@
 {{#each transactions}}
     <tr>
         <td>{{timeSince this.time_utc}} ago</td>
-        <td>{{this.amount}}</td>
+        <td>{{this.amount}} {{coin_symbol}}</td>
         <td>{{this.address}}</td>
         <td>{{this.confirmations}}</td>
         <td>
-            (<a href="https://ltc.blockr.io/tx/info/{{this.tx}}" target="_blank">Blockr</a>)
-            (<a href="http://explorer.litecoin.net/tx/{{this.tx}}" target="_blank">LTC Explorer</a>)
+            (<a href="http://explorer.chaucha.orionx.io/tx/{{this.tx}}" target="_blank">Insight</a>)
+            <!-- (<a href="http://explorer.litecoin.net/tx/{{this.tx}}" target="_blank">Chaucha Explorer</a>) -->
         </td>
     </tr>
 {{/each}}
