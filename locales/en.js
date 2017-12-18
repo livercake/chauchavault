@@ -128,5 +128,6 @@
 	"Wallet Saved": "Wallet Saved",
 	"This service relies on the community to keep it alive": "This service relies on the community to keep it alive",
 	"Donating just $1 in Chaucha helps contribute towards development time, and server costs.": "Donating just $1 in Chaucha helps contribute towards development time, and server costs.",
-	"When you send Chaucha via ChauchaVault, we use the private keys in your browser memory to sign a transaction from your address, we then post that crafted transaction to our server as a hash which we cannot modify, we can only push the transaction out to the network.": "When you send Chaucha via ChauchaVault, we use the private keys in your browser memory to sign a transaction from your address, we then post that crafted transaction to our server as a hash which we cannot modify, we can only push the transaction out to the network."
+	"When you send Chaucha via ChauchaVault, we use the private keys in your browser memory to sign a transaction from your address, we then post that crafted transaction to our server as a hash which we cannot modify, we can only push the transaction out to the network.": "When you send Chaucha via ChauchaVault, we use the private keys in your browser memory to sign a transaction from your address, we then post that crafted transaction to our server as a hash which we cannot modify, we can only push the transaction out to the network.",
+	"Explorer":"Explorer"
 }

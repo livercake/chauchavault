@@ -126,5 +126,6 @@
 	"Wallet": "Billetera",
 	"Wallet Saved": "Billetera Guardada",
 	"This service relies on the community to keep it alive": "Este servicio depende de la comunidad para mantenerse vivo",
-	"Donating just $1 in Chaucha helps contribute towards development time, and server costs.": "Donar algunas chauchas ayuda a contribuir con el tiempo de desarrollo, y los costos del servidor."
+	"Donating just $1 in Chaucha helps contribute towards development time, and server costs.": "Donar algunas chauchas ayuda a contribuir con el tiempo de desarrollo, y los costos del servidor.",
+	"Explorer":"Explorer"
 }

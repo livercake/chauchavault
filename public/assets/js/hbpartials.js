@@ -9,7 +9,9 @@ templates['addresses'] = template({"1":function(container,depth0,helpers,partial
     + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
     + "</td>\n        <td>0</td>\n        <td>\n            <button class=\"btn btn-success viewkey-btn\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"View Private Key",{"name":"i18n","hash":{},"data":data}))
-    + "</button>\n            <!-- <button class=\"btn btn-secondary signkey-btn\">Sign</button> -->\n            <button class=\"btn btn-secondary qr-btn\">"
+    + "</button>\n            <!-- <button class=\"btn btn-secondary signkey-btn\">Sign</button> -->\n            <button class=\"btn btn-secondary explorer-btn\">"
+    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Explorer",{"name":"i18n","hash":{},"data":data}))
+    + "</button>\n            <button class=\"btn btn-secondary qr-btn\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"QR",{"name":"i18n","hash":{},"data":data}))
     + "</button>\n        </td>\n        <td><button class=\"btn btn-danger deleteaddr-btn\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Delete",{"name":"i18n","hash":{},"data":data}))
