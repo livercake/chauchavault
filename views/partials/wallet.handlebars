@@ -6,12 +6,12 @@
     <div class="container">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-            <li><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-            <li><a href="#tab_transactions" role="tab" data-toggle="tab">Transactions</a></li>
-            <li><a href="#tab_send_coins" role="tab" data-toggle="tab">Send</a></li>
-            <li class="active"><a href="#tab_addresses" role="tab" data-toggle="tab">Receive (manage addresses)</a></li>
-            <li><a href="#tab_import_export" role="tab" data-toggle="tab">Import/Export</a></li>
-            <li><a href="#tab_settings" role="tab" data-toggle="tab">Settings</a></li>
+            <li><a href="#home" role="tab" data-toggle="tab">{{i18n "Home"}}</a></li>
+            <li><a href="#tab_transactions" role="tab" data-toggle="tab">{{i18n "Transactions"}}</a></li>
+            <li><a href="#tab_send_coins" role="tab" data-toggle="tab">{{i18n "Send"}}</a></li>
+            <li class="active"><a href="#tab_addresses" role="tab" data-toggle="tab">{{i18n "Receive (manage addresses)"}}</a></li>
+            <li><a href="#tab_import_export" role="tab" data-toggle="tab">{{i18n "Import/Export"}}</a></li>
+            <li><a href="#tab_settings" role="tab" data-toggle="tab">{{i18n "Settings"}}</a></li>
         </ul>
     </div>
 </div>
@@ -26,18 +26,18 @@
     <div class="tab-content">
         <div class="tab-pane" id="home">...</div>
         <div class="tab-pane" id="tab_transactions">
-            <h4>Your Transactions</h4>
+            <h4>{{i18n "Your Transactions"}}</h4>
 
             <table id="list-transactions-outer" class="table table-bordered">
                 <thead>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Your Address</th>
-                <th>Confirmations</th>
-                <th>View</th>
+                <th>{{i18n "Date"}}</th>
+                <th>{{i18n "Amount"}}</th>
+                <th>{{i18n "Your Address"}}</th>
+                <th>{{i18n "Confirmations"}}</th>
+                <th>{{i18n "View"}}</th>
                 </thead>
                 <tbody id="list-transactions">
-                    <tr><td colspan="5">Error loading transactions?</td></tr>
+                    <tr><td colspan="5">{{i18n "Error loading transactions?"}}</td></tr>
                 </tbody>
             </table>
         </div>
@@ -45,24 +45,22 @@
 
             <table id="list-addresses-outer" class="table table-bordered">
                 <thead>
-                <th>Address</th>
-                <th>Balance</th>
-                <th>Options</th>
-                <th>Delete?</th>
+                <th>{{i18n "Address"}}</th>
+                <th>{{i18n "Balance"}}</th>
+                <th>{{i18n "Options"}}</th>
+                <th>{{i18n "Delete?"}}</th>
                 </thead>
                 <tbody id="list-addresses">
-                    <tr><td colspan="4">Error loading addresses?</td></tr>
+                    <tr><td colspan="4">{{i18n "Error loading addresses?"}}</td></tr>
                 </tbody>
             </table>
 
-            <button id="generate-btn" class="btn btn-default">Generate New Address</button>
+            <button id="generate-btn" class="btn btn-default">{{i18n "Generate New Address"}}</button>
         </div>
         <div class="tab-pane" id="tab_send_coins">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="alert alert-danger">Note: You will get an error if you try to send
-                    multiple transactions in a short period of time. This is because you cannot send
-                    unconfirmed coins yet.</div>
+                    <div class="alert alert-danger">{{i18n "Note: You will get an error if you try to send multiple transactions in a short period of time. This is because you cannot send unconfirmed coins yet."}}</div>
 
 
                     <!-- <h4>Exchange Rates</h4>
@@ -72,28 +70,28 @@
                 </div>
 
                 <div class="col-md-6">
-                    <h4>Send {{coin_symbol}}</h4>
+                    <h4>{{i18n "Send"}} {{coin_symbol}}</h4>
                     <div class="input-group-lg">
-                        <label for="from-address">From Address</label>
+                        <label for="from-address">{{i18n "From Address"}}</label>
                         <select name="my-addresses" id="select-my-addresses" class="form-control"></select>
                     </div>
                     <div class="row">
                         <div class="col-md-8">
                             <div class="input-group form-inline">
-                                <label for="to-address">Recipient Address</label>
+                                <label for="to-address">{{i18n "Recipient Address"}}</label>
                                 <input type="text" class="form-control" id="to-address"/>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="input-group form-inline">
-                                <label for="to-address">Amount to send</label>
+                                <label for="to-address">{{i18n "Amount to send"}}</label>
                                 <input type="text" class="form-control" id="send-coins-amount" placeholder="0.0000"/>
                             </div>
                         </div>
                     </div>
 
                     <hr/>
-                    <button class="btn btn-default" id="send-coins-btn">Send Coins</button>
+                    <button class="btn btn-default" id="send-coins-btn">{{i18n "Send Coins"}}</button>
                     &nbsp;
                 </div>
 
@@ -126,36 +124,36 @@
         <div class="tab-pane" id="tab_import_export">
             <div class="row">
                 <div class="col-md-6 form-inline">
-                    <h4>Import</h4>
+                    <h4>{{i18n "Import"}}</h4>
                     <div class="input-group">
-                        <p class="form-control-static">Import Key (WIF)</p>
+                        <p class="form-control-static">{{i18n "Import Key (WIF)"}}</p>
                     </div>
                     <div class="input-group">
                         <input type="text" class="form-control" id="import-address" />
                     </div>
-                    <button class="btn btn-default" id="import-btn">Import</button>
+                    <button class="btn btn-default" id="import-btn">{{i18n "Import"}}</button>
                 </div>
                 <div class="col-md-9">
-                    <h4>Export</h4>
-                    <a href="javascript:void(0);" id="export-wallet-json-link">Export Wallet (JSON)</a>
+                    <h4>{{i18n "Export"}}</h4>
+                    <a href="javascript:void(0);" id="export-wallet-json-link">{{i18n "Export Wallet (JSON)"}}</a>
                 </div>
             </div>
         </div>
         <div class="tab-pane" id="tab_settings">
-            <h3>Security</h3>
+            <h3>{{i18n "Security"}}</h3>
             <div class="row">
                 <div class="col-md-6 form-inline">
-                    <label for="account-email">Your Email (optional): </label>
+                    <label for="account-email">{{i18n "Your Email (optional)"}}: </label>
                     <input type="text" id="account-email" class="form-control"/>
-                    <button class="btn btn-default" id="save-email">Save Email</button>
+                    <button class="btn btn-default" id="save-email">{{i18n "Save Email"}}</button>
                 </div>
             </div>
             <hr/>
-            <h4>2-Factor Authentication</h4>
+            <h4>{{i18n "2-Factor Authentication"}}</h4>
             <div class="row">
                 <div class="col-xs-12 col-md-6">
-                    <strong>2-Factor Authentication Status: <strong id="2fa-status" style="color:red">Disabled</strong></strong>
-                    <button class="btn btn-default" id="configure-gauth">Enable/Modify 2-Factor Authentication</button>
+                    <strong>{{i18n "2-Factor Authentication Status"}}: <strong id="2fa-status" style="color:red">{{i18n "Disabled"}}</strong></strong>
+                    <button class="btn btn-default" id="configure-gauth">{{i18n "Enable/Modify 2-Factor Authentication"}}</button>
 
                 </div>
                 <div class="col-xs-12 col-md-6">
@@ -178,18 +176,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Deleting Address</h4>
+                    <h4 class="modal-title" id="myModalLabel">{{i18n "Deleting Address"}}</h4>
                 </div>
                 <div class="modal-body">
-                    <h3>Warning: You're deleting an address!</h3>
-                    <h4 style="color:#ff0000">This action is irreversible, please make sure you're absolutely sure
-                        you want to do this, the private key will be removed from your account and you will lose
-                        access to any funds stored in this address unless you have a backup of the private key somewhere.</h4>
-                    <p>The address you are deleting is <strong id="deletingAddress"></strong></p>
+                    <h3>{{i18n "Warning: You're deleting an address!"}}</h3>
+                    <h4 style="color:#ff0000">{{i18n "This action is irreversible, please make sure you're absolutely sure you want to do this, the private key will be removed from your account and you will lose access to any funds stored in this address unless you have a backup of the private key somewhere."}}</h4>
+                    <p>{{i18n "The address you are deleting is"}} <strong id="deletingAddress"></strong></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="i-am-sure-delete" class="btn btn-danger" data-dismiss="modal">I'm sure I want to delete this address</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="i-am-sure-delete" class="btn btn-danger" data-dismiss="modal">{{i18n "I'm sure I want to delete this address"}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Cancel"}}</button>
                 </div>
             </div>
         </div>
@@ -202,13 +198,13 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exportWalletModalLabel">Exporting Wallet</h4>
+                    <h4 class="modal-title" id="exportWalletModalLabel">{{i18n "Exporting Wallet"}}</h4>
                 </div>
                 <div class="modal-body">
                     <textarea id="wallet-exported-txt" class="form-control" cols="20" rows="30" style="height: 300px;"></textarea>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Done"}}</button>
                 </div>
             </div>
         </div>
@@ -221,26 +217,25 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="configGauthModalLabel">Setting up Google Authenticator (or other TOTP
-                        app)</h4>
+                    <h4 class="modal-title" id="configGauthModalLabel">{{i18n "Setting up Google Authenticator (or other TOTP app)"}}</h4>
                 </div>
                 <div class="modal-body">
-                    <p style="color: red"><strong>IMPORTANT, READ BEFORE CONTINUING: </strong> Please make sure that you
-                    have an email set in your account settings. If you don't have one and you lose access to your 2FA app for
-                    any reason, you won't be able to get back into your account.</p>
+                    <p style="color: red"><strong>{{i18n "IMPORTANT, READ BEFORE CONTINUING:"}} </strong>
+                    {{i18n "Please make sure that you have an email set in your account settings."}}
+                    {{i18n "If you don't have one and you lose access to your 2FA app for any reason, you won't be able to get back into your account."}}</p>
                     <div class="qrcode_container text-center" id="modal-gauth-qr">
 
                     </div>
-                    <p>Manual key entry: <strong id="modal-gauth-secret"></strong></p>
-                    <p>To enable 2 Factor Authentication, scan the QR code above into your favourite authenticator app
-                    such as <strong>Google Authenticator</strong> or <strong>Authy</strong>. Once done, enter the access
-                    token you get from the app into the text box below, it looks like <strong>123456</strong>.</p>
-                    <label for="modal-gauth-token">Your 2FA token from the app:</label>
+                    <p>{{i18n "Manual key entry:"}} <strong id="modal-gauth-secret"></strong></p>
+                    <p>{{i18n "To enable 2 Factor Authentication, scan the QR code above into your favourite authenticator app such as"}}
+                    <strong>Google Authenticator</strong> {{i18n "or"}} <strong>Authy</strong>.
+                    {{i18n "Once done, enter the access token you get from the app into the text box below, it looks like"}} <strong>123456</strong>.</p>
+                    <label for="modal-gauth-token">{{i18n "Your 2FA token from the app:"}}</label>
                     <input type="text" class="form-control" id="modal-gauth-token" placeholder="e.g. 123456"/>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="confirm-setup-2fa">Set Up 2FA</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirm-setup-2fa">{{i18n "Set Up 2FA"}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Cancel"}}</button>
                 </div>
             </div>
         </div>
@@ -253,20 +248,15 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="completeGauthModalLabel">You have successfully enabled 2FA for your
-                        account.</h4>
+                    <h4 class="modal-title" id="completeGauthModalLabel">{{i18n "You have successfully enabled 2FA for your account."}}</h4>
                 </div>
                 <div class="modal-body">
-                    <p>You've just enabled 2FA for your account. </p>
-                    <p>Please be aware that from now on you will be required to
-                    enter a token from your 2FA application approximately once a week for security, where-as untrusted computers
-                    will be de-authorized within 2 hours. </p>
-                    <p>If you decide that you don't want 2FA, or run into a problem with the
-                    application, you will be able to disable it from this computer using your password for the next week, without
-                    being required to enter a 2FA token.</p>
+                    <p>{{i18n "You've just enabled 2FA for your account."}} </p>
+                    <p>{{i18n "Please be aware that from now on you will be required to enter a token from your 2FA application approximately once a week for security, where-as untrusted computers will be de-authorized within 2 hours."}} </p>
+                    <p>{{i18n "If you decide that you don't want 2FA, or run into a problem with the application, you will be able to disable it from this computer using your password for the next week, without being required to enter a 2FA token."}}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Okay</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{i18n "Okay"}}</button>
                 </div>
             </div>
         </div>
@@ -278,13 +268,13 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="txModalLabel">Transaction Sent</h4>
+                    <h4 class="modal-title" id="txModalLabel">{{i18n "Transaction Sent"}}</h4>
                 </div>
                 <div class="modal-body">
-                    Transaction ID: <p id="txModalTXID">ERROR</p>
+                    {{i18n "Transaction ID"}}: <p id="txModalTXID">ERROR</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Close"}}</button>
                 </div>
             </div>
         </div>
@@ -295,7 +285,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{i18n "Close"}}"><span
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="privkeyModalLabel">Your Private Key</h4>
                 </div>
@@ -303,7 +293,7 @@
                     <input type="text" disabled="disabled" value="" class="form-control" id="privkey-showtext"/>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Close"}}</button>
                 </div>
             </div>
         </div>
@@ -316,18 +306,18 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="signMessageModalLabel">Sign Message</h4>
+                    <h4 class="modal-title" id="signMessageModalLabel">{{i18n "Sign Message"}}</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Address: <strong id="signmessage-address"></strong></p>
+                    <p>{{i18n "Address"}}: <strong id="signmessage-address"></strong></p>
                     <label for="sign-message"></label>
                     <textarea id="sign-message" class="form-control" cols="30" rows="5"></textarea><br/>
-                    <label for="signed-message">Signed Message</label>
+                    <label for="signed-message">{{i18n "Signed Message"}}</label>
                     <textarea id="signed-message" class="form-control" cols="30" rows="5" disabled="disabled"></textarea><br/>
-                    <button class="btn btn-success" id="sign-message-btn">Sign Message</button>
+                    <button class="btn btn-success" id="sign-message-btn">{{i18n "Sign Message"}}</button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Close"}}</button>
                 </div>
             </div>
         </div>
@@ -339,7 +329,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="qrcodeModalLabel">QR Code</h4>
+                    <h4 class="modal-title" id="qrcodeModalLabel">{{i18n "QR Code"}}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
@@ -348,7 +338,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Cancel"}}</button>
                 </div>
             </div>
         </div>

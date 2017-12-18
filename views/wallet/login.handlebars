@@ -1,33 +1,33 @@
 <div class="wallet-container">
     <div class="main_header single">
-        <h1>Login</h1>
+        <h1>{{i18n "Login"}}</h1>
     </div>
     <br><br>
     <div class="container">
         <div class="col-xs-12">
             {{#if is_ie}}
-                <div class="alert alert-danger"><strong>WARNING:</strong> Internet Explorer is NOT supported at the moment due to compatibility issues. You will need to use Google Chrome or Firefox. If you continue to use Internet Explorer, you may <strong>lose your addresses PERMANENTLY</strong> and we cannot help you recover them.</div>
+                <div class="alert alert-danger"><strong>{{i18n "WARNING"}}:</strong> {{i18n "Internet Explorer is NOT supported at the moment due to compatibility issues. You will need to use Google Chrome or Firefox. If you continue to use Internet Explorer, you may"}} <strong>{{i18n "lose your addresses PERMANENTLY"}}</strong> {{i18n "and we cannot help you recover them"}}.</div>
             {{/if}}
 
         </div>
         <div class="col-md-6 col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">{{i18n "Login"}}</div>
                 <div class="panel-body">
                     <div class="form-horizontal">
                         <div class="form-group-lg">
-                            <label for="identifier">Identifier</label>
+                            <label for="identifier">{{i18n "Identifier"}}</label>
                             <input type="text" class="form-control" id="identifier-txt" name="identifier"/>
                         </div>
                         <div class="form-group-lg">
-                            <label for="password">Password</label>
+                            <label for="password">{{i18n "Password"}}</label>
                             <input type="password" class="form-control" id="password-txt" name="password"/>
                         </div>
                         <hr/>
                         <div class="form-group-lg">
-                            <button class="btn btn-default" id="login-btn">Login</button>
+                            <button class="btn btn-default" id="login-btn">{{i18n "Login"}}</button>
                             <a href="/wallet/create">
-                                <button class="btn btn-secondary" id="register-lnk">Register</button>
+                                <button class="btn btn-secondary" id="register-lnk">{{i18n "Register"}}</button>
                             </a>
                         </div>
                     </div>
@@ -37,16 +37,15 @@
         </div>
 
         <div class="well col-md-6 col-xs-12">
-            <h3>Forgot 2FA</h3>
+            <h3>{{i18n "Forgot 2FA"}}</h3>
 
-            <p>Please contact us via the <a href="/contact">Contact Page</a>. There is no automated recovery process right now.</p>
-            <p>You will need to have an email on your account so that we can verify that you are the original owner.</p>
+            <p>{{i18n "Please contact us via the"}} <a href="/contact">{{i18n "Contact Page"}}</a>. {{i18n "There is no automated recovery process right now"}}.</p>
+            <p>{{i18n "You will need to have an email on your account so that we can verify that you are the original owner"}}.</p>
             <br>
-            <h3>Lost my password</h3>
+            <h3>{{i18n "Lost my password"}}</h3>
             <!--<a href="/wallet/forgot2fa">Lost 2FA</a>-->
-            <p>Due to the way LiteVault works, we CANNOT help you with a lost password,
-                your wallet is encrypted and we don't store the password, or any hash on our servers.
-            We can only help you with lost authenticators, or other forms of 2FA.</p>
+            <p>{{i18n "Due to the way ChauchaVault works, we CANNOT help you with a lost password, your wallet is encrypted and we don't store the password, or any hash on our servers."}}
+            {{i18n "We can only help you with lost authenticators, or other forms of 2FA."}}</p>
         </div>
 
     </div>
@@ -59,23 +58,22 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="authenticatorModalLabel">This wallet has 2FA enabled. Please
-                    authenticate</h4>
+                <h4 class="modal-title" id="authenticatorModalLabel">{{i18n "This wallet has 2FA enabled"}}.
+                  {{i18n "Please authenticate"}}</h4>
             </div>
             <div class="modal-body">
-                <p>Please enter the numeric code from your authenticator app. This wallet has 2-Factor authentication
-                    and you cannot login without entering a valid 2FA token for this account.</p>
+                <p>{{i18n "Please enter the numeric code from your authenticator app"}}. {{i18n "This wallet has 2-Factor authentication and you cannot login without entering a valid 2FA token for this account"}}.</p>
                 <input type="text" class="form-control" id="authenticator-token" placeholder="e.g. 123455"/><br/>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" id="is-trusted-chk" />
-                        Trust this device (don't ask me for a 2-Factor token for a week)
+                        {{i18n "Trust this device (don't ask me for a 2-Factor token for a week)"}}
                     </label>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="authenticator-btn">Login</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="authenticator-btn">{{i18n "Login"}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Cancel"}}</button>
             </div>
         </div>
     </div>

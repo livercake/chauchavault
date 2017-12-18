@@ -5,15 +5,15 @@
 
                 <!-- Header -->
                 <div class="slide_header">
-                    <h1 class="text-center">Welcome to ChauchaVault</h1>
-                    <h3 class="text-center">the trustless online wallet for Chaucha</h3>
+                    <h1 class="text-center">{{i18n "Welcome to ChauchaVault"}}</h1>
+                    <h3 class="text-center">{{i18n "the trustless online wallet for Chaucha"}}</h3>
                 </div>
 
                 <!-- Login/signup -->
                 <br><br>
                 <div class="row">
-                    <div class="col-md-2 col-md-offset-3 col-xs-6"><a href="/wallet/login" class="btn btn-primary form-control">Login</a></div>
-                    <div class="col-md-2 col-md-offset-2 col-xs-6"><a href="/wallet/create" class="btn btn-white form-control">Register</a></div>
+                    <div class="col-md-2 col-md-offset-3 col-xs-6"><a href="/wallet/login" class="btn btn-primary form-control">{{i18n "Login"}}</a></div>
+                    <div class="col-md-2 col-md-offset-2 col-xs-6"><a href="/wallet/create" class="btn btn-white form-control">{{i18n "Register"}}</a></div>
                 </div>
 
                 <!-- Info boxes -->
@@ -24,10 +24,10 @@
                         <div class="row info_box">
                             <div class="col-xs-2"><img src="/assets/images/lock-icon.png" class="stretch-to-col"></div>
                             <div class="col-xs-10">
-                                <h3>Secure</h3>
+                                <h3>{{i18n "Secure"}}</h3>
                                 <p>
-                                    Your wallet is encrypted before it touches our servers.
-                                    Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds.
+                                    {{i18n "Your wallet is encrypted before it touches our servers."}}
+                                    {{i18n "Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds."}}
                                 </p>
                             </div>
                         </div>
@@ -36,9 +36,9 @@
                         <div class="row info_box">
                             <div class="col-xs-2 col-xs-3"><img src="/assets/images/time-icon.png" class="stretch-to-col"></div>
                             <div class="col-xs-10">
-                                <h3>Fast</h3>
+                                <h3>{{i18n "Fast"}}</h3>
                                 <p>
-                                    No blockchain download needed, <a href="/wallet">sign up for an account</a> in less than 10 seconds
+                                    {{i18n "No blockchain download needed"}} <a href='/wallet'> {{i18n "sign up for an account"}}</a> {{i18n "in less than 10 seconds"}}
                                 </p>
                             </div>
                         </div>
@@ -49,10 +49,9 @@
                         <div class="row info_box">
                             <div class="col-xs-2"><img src="/assets/images/open-icon.png" class="stretch-to-col"></div>
                             <div class="col-xs-10">
-                                <h3>Open</h3>
+                                <h3>{{i18n "Open"}}</h3>
                                 <p>
-                                    We love Open Source software as much as you do, which is why we have
-                                    all of our source code publicly available for you to investigate <a href="https://github.com/p0ns/ChauchaVault">on GitHub</a>
+                                    {{i18n "We love Open Source software as much as you do, which is why we have all of our source code publicly available for you to investigate"}} <a href="https://github.com/p0ns/ChauchaVault">{{i18n "on GitHub"}}</a>
                                 </p>
                             </div>
                         </div>
@@ -61,9 +60,9 @@
                         <div class="row info_box">
                             <div class="col-xs-2"><img src="/assets/images/easy-icon.png" class="stretch-to-col"></div>
                             <div class="col-xs-10">
-                                <h3>Easy</h3>
+                                <h3>{{i18n "Easy"}}</h3>
                                 <p>
-                                    ChauchaVault is extremely easy to use, send and receive litecoins without downloading any software
+                                    {{i18n "ChauchaVault is extremely easy to use, send and receive Chauchas without downloading any software"}}
                                 </p>
                             </div>
                         </div>
@@ -92,37 +91,30 @@
             <!-- Info boxes (type 2) -->
             <div class="row index_faq">
                 <div class="col-sm-5 col-sm-offset-1 info_box">
-                    <h3>What is ChauchaVault?</h3>
+                    <h3>{{i18n "What is ChauchaVault?"}}</h3>
                     <p>
-                        ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin
-                        operator running with the funds. This same system is used by Blockchain.info - a well known online
-                        Bitcoin wallet (UNAFFILIATED WITH ChauchaVault).
+                      {{i18n "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator running with the funds."}}
+                      {{i18n "This same system is used by Blockchain.info - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT)."}}
                     </p>
                 </div>
                 <div class="col-sm-5 info_box">
-                    <h3>How does it work?</h3>
+                    <h3>{{i18n "How does it work?"}}</h3>
                     <p>
-                        When you login to ChauchaVault, your browser sends your identifier to our server,
-                        we return an encrypted version of your wallet with the AES algorithm,
-                        your browser then decrypts this using your password (which is never sent to the server)
-                        to load your private keys used to sign transactions.
+                        {{i18n "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the AES algorithm, your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."}}
                     </p>
                 </div>
             </div>
             <div class="row index_faq">
                 <div class="col-sm-5 col-sm-offset-1 info_box">
-                    <h3>Who made ChauchaVault?</h3>
+                    <h3>{{i18n "Who made ChauchaVault?"}}</h3>
                     <p>
-                        LiteVault was made by <a href="http://someguy123.com">Someguy123</a> and then was forked into ChauchaVault by <a href="http://p0ns.org">p0ns</a> :<br />
-                        "I am a trusted website developer within the Litecoin community responsible for various services including the <a href="http://explorer.litecoin.net">Litecoin Block Explorer</a>, and administrating various official Litecoin resources such as the <a href="https://litecoin.info">Wiki</a> and IRC.
-                        <br/><br/>I feel Litecoin hasn’t had enough backing or support, so this is my contribution."
+                        {{i18n "LiteVault was made by"}} <a href="http://someguy123.com">Someguy123</a> {{i18n "and then was forked into ChauchaVault by"}} <a href="http://p0ns.org">p0ns</a> :<br />
                     </p>
                 </div>
                 <div class="col-sm-5 info_box">
-                    <h3>What technology was used?</h3>
+                    <h3>{{i18n "What technology was used?"}}</h3>
                     <p>
-                        The backend was built in Node.JS, For the frontend Bootstrap was used (and completely re-styled) for the HTML and CSS to ensure a good, responsive layout was possible,
-                        allowing the website to work well on mobiles, tablets and computers.
+                        {{i18n "The backend was built in Node.JS, For the frontend Bootstrap was used (and completely re-styled) for the HTML and CSS to ensure a good, responsive layout was possible, allowing the website to work well on mobiles, tablets and computers."}}
                     </p>
                 </div>
             </div>

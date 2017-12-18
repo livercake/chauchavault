@@ -34,7 +34,9 @@
 
     <!-- Additional styles -->
     <link rel="stylesheet" href="/assets/css/wallet.css"/>
-
+    <script>
+      var current_locale = "{{i18n-locale}}";
+    </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,13 +60,13 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li {{checkActive '/' current_url}}><a href="/">Home</a></li>
-                <li {{checkActive '/about' current_url}}><a href="/about">About</a></li>
+                <li {{checkActive '/' current_url}}><a href="/">{{i18n "Home"}}</a></li>
+                <li {{checkActive '/about' current_url}}><a href="/about">{{i18n "About"}}</a></li>
                 <!-- <li {{checkActive '/about/hidden-service' current_url}}><a href="/about/hidden-service">Tor Hidden Service</a></li> -->
-                <li {{checkActive '/contact' current_url}}><a href="/contact">Contact</a></li>
-                <li {{checkActive '/wallet/login' current_url}}><a href="/wallet/login">Wallet</a></li>
+                <li {{checkActive '/contact' current_url}}><a href="/contact">{{i18n "Contact"}}</a></li>
+                <li {{checkActive '/wallet/login' current_url}}><a href="/wallet/login">{{i18n "Wallet"}}</a></li>
             </ul>
-            <p class="navbar-text navbar-right" id="walletsaved" style="display: none">Wallet Saved</p>
+            <p class="navbar-text navbar-right" id="walletsaved" style="display: none">{{i18n "Wallet Saved"}}</p>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
@@ -89,29 +91,14 @@
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="row">
                     <p class="donation_text">
-                        This service relies on the community to keep it alive.<br>
-                        Donating just $1 in Litecoins helps contribute towards development time, and server costs.
+                        {{i18n "This service relies on the community to keep it alive"}}.<br>
+                        {{i18n "Donating just $1 in Chaucha helps contribute towards development time, and server costs."}}
                     </p>
                 </div>
                 <div class="row top_padder">
                     <!-- For security reasons, we don't load the coin widget on wallet pages-->
-                        {{#isWallet current_url}}
-                        <div class="col-xs-12 col-sm-6 col-md-12 text-center">
-                            LTC: <b>LNWEjx3DKSAWKX5fkWfCwa2tWSQeo7ZmnR</b>
-                        {{else}}
-                        <div class="col-xs-6 col-md-6 text-center">
-                            <div id="coinwidget-litecoin-LNWEjx3DKSAWKX5fkWfCwa2tWSQeo7ZmnR"></div>
-                        {{/isWallet}}
 
-                    </div>
-                        {{#isWallet current_url}}
-                            <div class="col-xs-12 col-sm-6 col-md-12 text-center">
-                                BTC: <b>17PPTHmS8N34KYKdDc4Gn1psabteGS8EE3</b>
-                        {{else}}
-                            <div class="col-xs-6 col-md-6 text-center">
-                                <div id="coinwidget-bitcoin-17PPTHmS8N34KYKdDc4Gn1psabteGS8EE3"></div>
-                        {{/isWallet}}
-                    </div>
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 copyright">
@@ -125,14 +112,20 @@
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
+        <pre id="nada"></pre>
     </div>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/assets/js/sprintf.min.js"></script>
+<script src="/assets/js/i18n.js"></script>
+
 
 <script src="/assets/js/litevault-deps.js"></script>
+<script src="/assets/js/bitcoinjs.min.js"></script>
+
 <script src="/assets/js/hbpartials.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
@@ -142,8 +135,9 @@
 <!-- Donation -->
 {{#isWallet current_url}}
 {{else}}
-<script src="//blockr.io/js_external/coinwidget/coin.js"></script>
-<script src="/assets/js/main.js"></script>
+<!-- <script src="//blockr.io/js_external/coinwidget/coin.js"></script>
+<script src="/assets/js/main.js"></script> -->
+<!-- Disabled for fixing -->
 {{/isWallet}}
 </body>
 </html>

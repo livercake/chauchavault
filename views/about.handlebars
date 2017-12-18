@@ -1,7 +1,7 @@
 
 <div class="main_header single">
     <h1>
-        About ChauchaVault
+        {{i18n "About ChauchaVault"}}
     </h1>
 </div>
 
@@ -11,22 +11,18 @@
     <!-- Info boxes (type 2) -->
     <div class="row">
         <div class="col-xs-12 information_box">
-            <h3>What is ChauchaVault?</h3>
+            <h3>{{i18n "What is ChauchaVault?"}}</h3>
             <p>
-                ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator running with the funds.
-                This same system is used by Blockchain.info - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT).
+                {{i18n "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator running with the funds."}}
+                {{i18n "This same system is used by Blockchain.info - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT)."}}
             </p>
         </div><br>
         <div class="col-xs-12 information_box">
-            <h3>How does it work?</h3>
+            <h3>{{i18n "How does it work?"}}</h3>
             <p>
-                When you login to ChauchaVault, your browser sends your identifier to our server,
-                we return an encrypted version of your wallet with the AES algorithm,
-                your browser then decrypts this using your password (which is never sent to the server)
-                to load your private keys used to sign transactions.
+                {{i18n "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the AES algorithm, your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."}}
                 <br><br><br>
-                When you send Chaucha via ChauchaVault, we use the private keys in your browser memory to sign a transaction form your address,
-                we then post that crafted transaction to our server as a hash which we cannot modify, we can only push the transaction out to the network.
+                {{i18n "When you send Chaucha via ChauchaVault, we use the private keys in your browser memory to sign a transaction from your address, we then post that crafted transaction to our server as a hash which we cannot modify, we can only push the transaction out to the network."}}
             </p>
         </div><br>
     </div>
