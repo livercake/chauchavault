@@ -9,6 +9,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var dns = require('dns');
 //var process = require('process');
+i18n = require('i18n');
+
+i18n.configure({
+    locales:['en','es'],
+    directory: __dirname + '/locales'
+});
+
 
 var routes = require('./routes/index');
 var wallet = require('./routes/wallet');
@@ -44,6 +51,24 @@ var hbs =  exphbs.create({
     },
     partialsDir: 'views/server_partials'
 });
+app.use(i18n.init);
+
+
+app.use(function(req, res, next) {
+  hbs.handlebars.registerHelper('i18n', function() {
+    var args = Array.prototype.slice.call(arguments);
+    var options = args.pop();
+    return i18n.__.apply(options.data.root, args);
+  });
+  hbs.handlebars.registerHelper('i18n-locale', function() {
+    var args = Array.prototype.slice.call(arguments);
+    var options = args.pop();
+    return options.data.root.locale || "en";
+  });
+  next();
+});
+
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -118,6 +143,9 @@ app.use(function(req, res, next) {
         next();
     }
 });
+
+
+
 // debugging
 /*
 app.use(express.Router().get('/dump-torcache', function(req, res) {
@@ -145,15 +173,17 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
+        console.log(err)
         res.render('error', {
             message: err.message,
             error: err
         });
     });
-    var options = {
-        key: fs.readFileSync('dev/keys/key.pem'),
-        cert: fs.readFileSync('dev/keys/cert.pem')
-    };
+    // var options = {
+    //     key: fs.readFileSync('dev/keys/key.pem'),
+    //     cert: fs.readFileSync('dev/keys/cert.pem')
+    // };
+    var options = {};
     https.createServer(options, app).listen(4433);
 }
 
