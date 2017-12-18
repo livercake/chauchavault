@@ -698,6 +698,11 @@ function listAddressCallbacks(){
       $('#qrcode-address').html(address);
       $('#qrcodeModal').modal('toggle');
   });
+
+  $('#list-addresses .explorer-btn').off("click").click(function() {
+      var address = $(this).parent().parent().attr('data-address');
+      window.open(wallet.block_explorer_url+'/address/'+address,'_blank');
+  });
 }
 function initializeWallet(wallet) {
 
