@@ -49,6 +49,10 @@ interface CoinTransaction {
 // use "declare var" to silence compiler errors
 declare var Bitcoin;
 
+//Same for i18n
+declare var I18n;
+
+declare var current_locale;
 /*
  * lib/wallet.ts
  *
@@ -668,26 +672,27 @@ function colorTag(address) {
     return tags;
 }
 function listAddressCallbacks(){
-  $('#list-addresses').on("click", ".deleteaddr-btn", function() {
+  $('#list-addresses').off("click").on("click", ".deleteaddr-btn", function() {
+      console.log("running-delete-address-modal")
       var theAddress = this.parentElement.parentElement.attributes['data-address'].value;
       $('#deletingAddress').html(theAddress);
       $('#deleteAddressModal').modal('toggle');
   });
 
-  $('#list-addresses .viewkey-btn').click(function() {
+  $('#list-addresses .viewkey-btn').off("click").click(function() {
       var address = $(this).parent().parent().attr('data-address');
       var privkey = wallet.addresses[address].priv;
       $('#privkey-showtext').val(privkey);
       $('#privkeyModal').modal('toggle');
   });
 
-  $('#list-addresses .signkey-btn').click(function() {
+  $('#list-addresses .signkey-btn').off("click").click(function() {
       var address = $(this).parent().parent().attr('data-address');
       $('#signmessage-address').html(address);
       $('#signMessageModal').modal('toggle');
   });
 
-  $('#list-addresses .qr-btn').click(function() {
+  $('#list-addresses .qr-btn').off("click").click(function() {
       var address = $(this).parent().parent().attr('data-address');
       $('#qrcode-img').attr('src', 'https://someguy123.com/coinwidget/qr/?address=litecoin:' + address);
       $('#qrcode-address').html(address);
@@ -766,7 +771,12 @@ function initializeWallet(wallet) {
             for (var v in $('#list-addresses').children()) {
                 // silence typescript
                 var row : any = $('#list-addresses').children()[v];
-                var address = row.attributes['data-address'].value;
+                try{
+                  var address = row.attributes['data-address'].value;
+                }
+                catch(e){
+                  continue;
+                }
                 if (address == $('#deletingAddress').html()) {
                     row.remove();
                 }
@@ -1089,4 +1099,15 @@ Handlebars.registerHelper('colortag', function(address) {
 
 Handlebars.registerHelper('coin_symbol', function(address) {
     return wallet.coin_symbol;
+});
+
+var i18n = new I18n({
+  //these are the default values, you can omit
+  directory: "/locales",
+  locale: current_locale,
+  extension: ".js"
+});
+
+Handlebars.registerHelper('i18n', function(text) {
+    return i18n.__(text);
 });
