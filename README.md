@@ -92,7 +92,7 @@ How to install:
     npm install -g handlebars typescript
     git clone https://github.com/p0ns/ChauchaVault.git
     # install dependancies in the repo dir
-    cd LiteVault
+    cd ChauchaVault
     npm install
     # compile required files
     bash build.sh

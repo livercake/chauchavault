@@ -1,13 +1,19 @@
 {{#each addresses}}
-    <tr data-address="{{@key}}">
-        <td>{{@key}}</td>
-        <td>0</td>
-        <td>
-            <button class="btn btn-success viewkey-btn">{{i18n "View Private Key"}}</button>
-            <!-- <button class="btn btn-secondary signkey-btn">Sign</button> -->
-            <button class="btn btn-secondary explorer-btn">{{i18n "Explorer"}}</button>
-            <button class="btn btn-secondary qr-btn">{{i18n "QR"}}</button>
-        </td>
-        <td><button class="btn btn-danger deleteaddr-btn">{{i18n "Delete"}}</button></td>
-    </tr>
+    <div class="row one-address" data-address="{{@key}}">
+      <div class="col-xs-12 the-address">
+        {{@key}}
+      </div>
+
+      <div class="w-100"></div>
+      <div class="col-xs-12 the-balance">
+        <span class="balance">0 {{coin_symbol}}</span>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-xs-12 the-buttons">
+        <button class="btn btn-success viewkey-btn"><i class="fa fa-key" aria-hidden="true"></i> {{i18n "Key"}}</button>
+        <button class="btn btn-secondary explorer-btn"><i class="fa fa-search" aria-hidden="true"></i> {{i18n "Explorer"}}</button>
+        <button class="btn btn-secondary qr-btn"><i class="fa fa-qrcode" aria-hidden="true"></i> {{i18n "QR"}}</button>
+        <button class="btn btn-danger deleteaddr-btn"><i class="fa fa-times" aria-hidden="true"></i> {{i18n "Delete"}}</button>
+      </div>
+    </div>
 {{/each}}

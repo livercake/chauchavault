@@ -37,7 +37,7 @@ function inObject(obj) {
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    res.render('wallet/index', { title: 'ChauchaVault Wallet' });
+    res.render('partials/wallet', { title: 'ChauchaVault Wallet' });
 });
 
 router.get('/create', function(req, res) {

@@ -121,7 +121,7 @@ class Wallet {
         var PubKey = key.pub.getAddress(this.coin_network).toString();
         var PrivKey = key.toWIF(this.coin_network);
         this.addAddress(PubKey, {label: "", priv: PrivKey});
-        this.refreshBalances();
+        // this.refreshBalances();
         this.store();
     }
 
@@ -726,6 +726,7 @@ function initializeWallet(wallet) {
             $('#list-addresses').html(Handlebars.templates['addresses']({addresses: wallet.addresses,coin_symbol:wallet.coin_symbol}));
             renderAddresses();
             listAddressCallbacks();
+            $('html,body').animate({scrollTop: $('div[data-address='+a+']').offset().top},'slow');
         });
         wallet.registerBalanceChangeListener(function(balances) {
             $('.ltc-balance').html(wallet.getTotalBalance().toFixed(5)+" "+wallet.coin_symbol);
@@ -750,7 +751,7 @@ function initializeWallet(wallet) {
 
         $('#list-addresses').html(Handlebars.templates['addresses']({addresses: wallet.addresses}));
         // now that the button actually exists, we register the click event
-        $('#generate-btn').click(function() {
+        $('.generate-btn').click(function() {
             wallet.generateAddress();
         });
 
@@ -775,16 +776,9 @@ function initializeWallet(wallet) {
             wallet.removeAddress($('#deletingAddress').html());
             for (var v in $('#list-addresses').children()) {
                 // silence typescript
-                var row : any = $('#list-addresses').children()[v];
-                try{
-                  var address = row.attributes['data-address'].value;
-                }
-                catch(e){
-                  continue;
-                }
-                if (address == $('#deletingAddress').html()) {
-                    row.remove();
-                }
+                var deletingAddress : any = $('#deletingAddress').html();
+                var row : any = $('div[data-address='+deletingAddress +']');
+                row.remove();
             }
         });
 
@@ -873,7 +867,7 @@ function initializeWallet(wallet) {
 
 
 
-        document.title = "Litevault Wallet";
+        document.title = document.title.replace(" Login","")
     });
 }
 
@@ -943,10 +937,9 @@ function renderAddresses() {
             myAddr.append('<option value="' + v + '">' + v + " (" + wallet.balances[v] + " "+wallet.coin_symbol+")</option>");
         }
         // update balance in the address table
-        balance = $('tr[data-address='+v+']');
+        balance = $('div[data-address='+v+']');
         if(balance.length > 0) {
-            balance = balance[0].children[1];
-            balance.innerHTML = wallet.balances[v] +" "+wallet.coin_symbol;
+            $(balance).find(".balance").html(wallet.balances[v] +" "+wallet.coin_symbol);
         }
     }
 }

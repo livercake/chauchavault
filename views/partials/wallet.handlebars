@@ -1,9 +1,9 @@
 <div class="logged_header main_header single">
-    <h1>
-        <span class="pull-right ltc-balance hidden-xs" id="ltc-balance">0.0000 {{coin_symbol}}</span>
-    </h1>
+    <div class="balance-container container">
+        <span class="pull-right ltc-balance" id="ltc-balance">0.0000 {{coin_symbol}}</span>
+    </div>
 
-    <div class="container">
+    <div class="container logged-in-bar" >
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li><a href="#home" role="tab" data-toggle="tab">{{i18n "Home"}}</a></li>
@@ -22,13 +22,15 @@
 
         </div>
     </div>
+
+
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane" id="home">...</div>
         <div class="tab-pane" id="tab_transactions">
             <h4>{{i18n "Your Transactions"}}</h4>
 
-            <table id="list-transactions-outer" class="table table-bordered">
+            <table id="list-transactions-outer" class="table table-responsive table-bordered">
                 <thead>
                 <th>{{i18n "Date"}}</th>
                 <th>{{i18n "Amount"}}</th>
@@ -41,22 +43,15 @@
                 </tbody>
             </table>
         </div>
+        
         <div class="tab-pane active" id="tab_addresses">
-
-            <table id="list-addresses-outer" class="table table-bordered">
-                <thead>
-                <th>{{i18n "Address"}}</th>
-                <th>{{i18n "Balance"}}</th>
-                <th>{{i18n "Options"}}</th>
-                <th>{{i18n "Delete?"}}</th>
-                </thead>
-                <tbody id="list-addresses">
-                    <tr><td colspan="4">{{i18n "Error loading addresses?"}}</td></tr>
-                </tbody>
-            </table>
-
-            <button id="generate-btn" class="btn btn-default">{{i18n "Generate New Address"}}</button>
+          <button class="btn btn-default generate-btn" >{{i18n "Generate New Address"}}</button>
+          <div id="list-addresses" class="container">
+            {{i18n "Error loading addresses?"}}
+          </div>
+            <button class="btn btn-default generate-btn">{{i18n "Generate New Address"}}</button>
         </div>
+
         <div class="tab-pane" id="tab_send_coins">
             <div class="row">
                 <div class="col-md-6">
@@ -129,7 +124,7 @@
                         <p class="form-control-static">{{i18n "Import Key (WIF)"}}</p>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="import-address" />
+                        <input type="text" class="form-control" id="import-address" size=50/>
                     </div>
                     <button class="btn btn-default" id="import-btn">{{i18n "Import"}}</button>
                 </div>
