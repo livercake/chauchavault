@@ -369,8 +369,6 @@ class Wallet {
             if(t.time && t.time>0){
               time = (t.time-1)*1000;
             }
-            console.log(t.time);
-            console.log("time ",time);
             allTransactions.push({
               time_utc: time,
               address: address,
@@ -476,13 +474,13 @@ class Wallet {
                     var rawHex = tx.toHex();
                     console.log(rawHex);
 
-                    _this.pushTX(rawHex, function() {
-                        try {
-                            beep(300, 4);
-                        } catch(e) {
-                            console.error('Beep is not supported by this browser???');
-                        }
-                        });
+                    // _this.pushTX(rawHex, function() {
+                    //     try {
+                    //         beep(300, 4);
+                    //     } catch(e) {
+                    //         console.error('Beep is not supported by this browser???');
+                    //     }
+                    // });
 
                 });
 
@@ -694,7 +692,40 @@ function listAddressCallbacks(){
 
   $('#list-addresses .qr-btn').off("click").click(function() {
       var address = $(this).parent().parent().attr('data-address');
-      $('#qrcode-img').attr('src', 'https://someguy123.com/coinwidget/qr/?address=litecoin:' + address);
+
+      var options = {
+            render: 'canvas',
+            ecLevel: 'H',
+            minVersion: 7,
+
+            fill: "#2AE4A9",
+            background: "#ffffff",
+            // fill: jq('#img-buffer')[0],
+
+            text: address,
+            size: 200,
+            radius: 25 * 0.01,
+            quiet: 0,
+
+            mode: 4,
+
+            mSize: 15 * 0.01,
+            mPosX: 50 * 0.01,
+            mPosY: 50 * 0.01,
+
+            label: 'no label',
+            fontname: 'sans',
+            fontcolor: '#000',
+
+            image: $(".navbar-brand img")[0]
+        };
+      $("#address-qr").empty().qrcode(options)
+      // var qrcode = new QRCode($("#address-qr")[0], {
+      //     text: address,
+      //     width: 128,
+      //     height: 128,
+      //     correctLevel : QRCode.CorrectLevel.H
+      // });
       $('#qrcode-address').html(address);
       $('#qrcodeModal').modal('toggle');
   });
