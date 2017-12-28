@@ -298,7 +298,7 @@ class Wallet {
         for(var v in unspents) {
             CurrentAmount += parseFloat(unspents[v].amount);
             CutUnspent.push(unspents[v]);
-            if(CurrentAmount >= amount) {
+            if(CurrentAmount > amount) {
                 break;
             }
         }
