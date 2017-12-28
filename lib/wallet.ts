@@ -82,7 +82,7 @@ class Wallet {
 
     public coin_network = Bitcoin.networks.chaucha;
 
-    public block_explorer_url = "http://explorer.chaucha.orionx.io";
+    public block_explorer_url = "https://dev.chauchavault.com/explorer";
 
     public coin_symbol = "CHA";
 
