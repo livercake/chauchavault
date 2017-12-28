@@ -1,6 +1,7 @@
 body {
     font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:#30282a;
+    font-size: 18px;
 }
 h1, h2, h3, h4, h5, h6, .btn-primary {
     font-family: "Comfortaa", "Teko", "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -127,7 +128,7 @@ input.form-control {
 .logged_header {
     padding-left:20px;
     padding-right:20px;
-    max-height: 155px;
+    /* max-height: 155px; */
     position: relative;
 }
 .logged_header .nav {
@@ -358,7 +359,10 @@ body {
         letter-spacing: 3px;
     }
     .logged-in-bar {
-        height:120px !important;
+        height:140px !important;
+    }
+    #qrcode-address {
+      font-size: 0.9em !important;
     }
 }
 @media (max-width:540px), (max-device-width: 540px) {
@@ -412,7 +416,7 @@ body {
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
     border: 1px solid #d0d0d0;
-    border-bottom-color: transparent;
+    /* border-bottom-color: transparent; */
 }
 tbody tr:nth-child(odd) {
     background: rgb(244, 244, 244);
@@ -447,6 +451,7 @@ input[type='text'].form-control, input[type='password'].form-control {
 }
 .ltc-balance {
     font-size: 30px;
+    font-weight: bold;
 }
 #list-addresses-outer{
   /*background-color: red;*/
@@ -471,4 +476,10 @@ input[type='text'].form-control, input[type='password'].form-control {
 }
 .generate-btn {
   margin: 3px;
+}
+#address-qr img {
+  margin: 0 auto;
+}
+#qrcode-address{
+  font-size: 1.5em;
 }

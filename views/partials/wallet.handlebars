@@ -6,7 +6,7 @@
     <div class="container logged-in-bar" >
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-            <li><a href="#home" role="tab" data-toggle="tab">{{i18n "Home"}}</a></li>
+            <!-- <li><a href="#home" role="tab" data-toggle="tab">{{i18n "Home"}}</a></li> -->
             <li><a href="#tab_transactions" role="tab" data-toggle="tab">{{i18n "Transactions"}}</a></li>
             <li><a href="#tab_send_coins" role="tab" data-toggle="tab">{{i18n "Send"}}</a></li>
             <li class="active"><a href="#tab_addresses" role="tab" data-toggle="tab">{{i18n "Receive (manage addresses)"}}</a></li>
@@ -30,7 +30,10 @@
         <div class="tab-pane" id="tab_transactions">
             <h4>{{i18n "Your Transactions"}}</h4>
 
-            <table id="list-transactions-outer" class="table table-responsive table-bordered">
+            <div id="list-transactions" class="container">
+              {{i18n "Error loading transactions?"}}
+            </div>
+            <!-- <table id="list-transactions-outer" class="table table-responsive table-bordered">
                 <thead>
                 <th>{{i18n "Date"}}</th>
                 <th>{{i18n "Amount"}}</th>
@@ -41,9 +44,11 @@
                 <tbody id="list-transactions">
                     <tr><td colspan="5">{{i18n "Error loading transactions?"}}</td></tr>
                 </tbody>
-            </table>
+            </table> -->
+
+
         </div>
-        
+
         <div class="tab-pane active" id="tab_addresses">
           <button class="btn btn-default generate-btn" >{{i18n "Generate New Address"}}</button>
           <div id="list-addresses" class="container">
@@ -328,7 +333,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <img src="" id="qrcode-img" alt="" width="200" height="200"/><br/>
+                        <div id="address-qr"></div><br/>
                         <strong id="qrcode-address"></strong>
                     </div>
                 </div>

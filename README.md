@@ -1,6 +1,6 @@
 ChauchaVault
 --------
-Official Site: https://www.litevault.net
+Official Site: https://www.chauchavault.com
 
 ChauchaVault was designed to give Chaucha a site like Blockchain.info, meaning a trustless wallet with client-side transaction signing, private key storage etc.
 
