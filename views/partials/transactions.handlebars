@@ -1,12 +1,24 @@
 {{#each transactions}}
-    <tr>
-        <td>{{timeSince this.time_utc}} ago</td>
-        <td>{{this.amount}} {{coin_symbol}}</td>
-        <td>{{this.address}}</td>
-        <td>{{this.confirmations}}</td>
-        <td>
-            (<a href="http://explorer.chaucha.orionx.io/tx/{{this.tx}}" target="_blank">Insight</a>)
-            <!-- (<a href="http://explorer.litecoin.net/tx/{{this.tx}}" target="_blank">Chaucha Explorer</a>) -->
-        </td>
-    </tr>
+    <div class="row one-transaction">
+      <div class="col-xs-12 the-when">
+        {{timeSince this.time_utc}} ago
+      </div>
+
+      <div class="col-xs-12 the-address">
+        {{this.address}}
+      </div>
+
+      <div class="w-100"></div>
+      <div class="col-xs-12 the-amount">
+        <span class="balance">{{this.amount}} {{coin_symbol}}</span>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-xs-12 the-confirmations">
+        {{this.confirmations}}
+      </div>
+      <div class="w-100"></div>
+      <div class="col-xs-12 the-links">
+        (<a href="http://explorer.chaucha.orionx.io/tx/{{this.tx}}" target="_blank">Insight</a>)
+      </div>
+    </div>
 {{/each}}
