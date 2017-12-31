@@ -33,6 +33,9 @@
     <!-- Main Theme & design -->
     <link rel="stylesheet" href="/assets/css/style.css">
 
+    <!-- liver was here, hacking -->
+    <link rel="stylesheet" href="/assets/css/liver.css">
+
     <!-- Additional styles -->
     <link rel="stylesheet" href="/assets/css/wallet.css"/>
     <script>
@@ -46,9 +49,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="liver-remix">
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -56,7 +58,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="/assets/images/chaucha.png"><span>ChauchaVault</span></a>
+            <a class="navbar-brand" href="/"><img src="/assets/images/chaucha.png"></a>
             <!-- <span class="pull-right visible-xs-inline ltc-balance" id="navbar-balance" style="font-size: 22px;padding: 7px 7px;"></span> -->
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -69,22 +71,23 @@
             </ul>
             <p class="navbar-text navbar-right" id="walletsaved" style="display: none">{{i18n "Wallet Saved"}}</p>
         </div><!--/.nav-collapse -->
-    </div>
 </nav>
 <div class="container">
     {{#if is_tor}}
     <div class="row" style="margin-top: 15px;">
         <div class="col-xs-12">
-                <div class="alert alert-danger">SECURITY ISSUE: Dear Tor user, you're accessing
-                    our clearnet site over Tor. This puts you at risk of your SSL being removed and
-                    having a malicious website served. Please use <a href="http://vaultu7dxw5bbg37.onion/">our hidden service</a>
-                    If you would like to know more about this security issue, please <a href="/about/hidden-service">Click Here</a></div>
+          <div class="alert alert-danger">SECURITY ISSUE: Dear Tor user, you're accessing
+              our clearnet site over Tor. This puts you at risk of your SSL being removed and
+              having a malicious website served. Please use <a href="http://vaultu7dxw5bbg37.onion/">our hidden service</a>
+              If you would like to know more about this security issue, please <a href="/about/hidden-service">Click Here</a>
+          </div>
         </div>
     </div>
     {{/if}}
 </div>
 
-{{{body}}}
+  {{{body}}}
+
 
 <footer class="footer">
     <div class="container" style="position: relative">
@@ -112,8 +115,10 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-        <pre id="nada"></pre>
+        <div class="hide">
+          <div class="clearfix"></div>
+          <pre id="nada"></pre>
+        </div>
     </div>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -5,3 +5,5 @@ node_modules/
 helpers/blockr-api.js*
 config.js
 dev/
+env/
+package-lock.json

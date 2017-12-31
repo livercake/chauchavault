@@ -3,19 +3,21 @@
 templates['addresses'] = template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "    <tr data-address=\""
+  return "    <div class=\"row one-address\" data-address=\""
     + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + "\">\n        <td>"
+    + "\">\n      <div class=\"col-xs-12 the-address\">\n        "
     + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td>0</td>\n        <td>\n            <button class=\"btn btn-success viewkey-btn\">"
-    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"View Private Key",{"name":"i18n","hash":{},"data":data}))
-    + "</button>\n            <!-- <button class=\"btn btn-secondary signkey-btn\">Sign</button> -->\n            <button class=\"btn btn-secondary explorer-btn\">"
+    + "\n      </div>\n\n      <div class=\"w-100\"></div>\n      <div class=\"col-xs-12 the-balance\">\n        <span class=\"balance\">0 "
+    + alias4(((helper = (helper = helpers.coin_symbol || (depth0 != null ? depth0.coin_symbol : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"coin_symbol","hash":{},"data":data}) : helper)))
+    + "</span>\n      </div>\n      <div class=\"w-100\"></div>\n      <div class=\"col-xs-12 the-buttons\">\n        <button class=\"btn btn-success viewkey-btn\"><i class=\"fa fa-key\" aria-hidden=\"true\"></i> "
+    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Key",{"name":"i18n","hash":{},"data":data}))
+    + "</button>\n        <button class=\"btn btn-secondary explorer-btn\"><i class=\"fa fa-search\" aria-hidden=\"true\"></i> "
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Explorer",{"name":"i18n","hash":{},"data":data}))
-    + "</button>\n            <button class=\"btn btn-secondary qr-btn\">"
+    + "</button>\n        <button class=\"btn btn-secondary qr-btn\"><i class=\"fa fa-qrcode\" aria-hidden=\"true\"></i> "
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"QR",{"name":"i18n","hash":{},"data":data}))
-    + "</button>\n        </td>\n        <td><button class=\"btn btn-danger deleteaddr-btn\">"
+    + "</button>\n        <button class=\"btn btn-danger deleteaddr-btn\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i> "
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Delete",{"name":"i18n","hash":{},"data":data}))
-    + "</button></td>\n    </tr>\n";
+    + "</button>\n      </div>\n    </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -24,21 +26,19 @@ templates['addresses'] = template({"1":function(container,depth0,helpers,partial
 templates['transactions'] = template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3=container.escapeExpression, alias4=container.lambda;
 
-  return "    <tr>\n        <td>"
+  return "    <div class=\"row one-transaction\">\n      <div class=\"col-xs-12 the-when\">\n        "
     + alias3((helpers.timeSince || (depth0 && depth0.timeSince) || alias2).call(alias1,(depth0 != null ? depth0.time_utc : depth0),{"name":"timeSince","hash":{},"data":data}))
-    + " ago</td>\n        <td>"
+    + " ago\n      </div>\n\n      <div class=\"col-xs-12 the-address\">\n        "
+    + alias3(alias4((depth0 != null ? depth0.address : depth0), depth0))
+    + "\n      </div>\n\n      <div class=\"w-100\"></div>\n      <div class=\"col-xs-12 the-amount\">\n        <span class=\"balance\">"
     + alias3(alias4((depth0 != null ? depth0.amount : depth0), depth0))
     + " "
     + alias3(((helper = (helper = helpers.coin_symbol || (depth0 != null ? depth0.coin_symbol : depth0)) != null ? helper : alias2),(typeof helper === "function" ? helper.call(alias1,{"name":"coin_symbol","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td>"
-    + alias3(alias4((depth0 != null ? depth0.address : depth0), depth0))
-    + "</td>\n        <td>"
+    + "</span>\n      </div>\n      <div class=\"w-100\"></div>\n      <div class=\"col-xs-12 the-confirmations\">\n        "
     + alias3(alias4((depth0 != null ? depth0.confirmations : depth0), depth0))
-    + "</td>\n        <td>\n            (<a href=\"http://explorer.chaucha.orionx.io/tx/"
+    + "\n      </div>\n      <div class=\"w-100\"></div>\n      <div class=\"col-xs-12 the-links\">\n        (<a href=\"http://explorer.chaucha.orionx.io/tx/"
     + alias3(alias4((depth0 != null ? depth0.tx : depth0), depth0))
-    + "\" target=\"_blank\">Insight</a>)\n            <!-- (<a href=\"http://explorer.litecoin.net/tx/"
-    + alias3(alias4((depth0 != null ? depth0.tx : depth0), depth0))
-    + "\" target=\"_blank\">Chaucha Explorer</a>) -->\n        </td>\n    </tr>\n";
+    + "\" target=\"_blank\">Insight</a>)\n      </div>\n    </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -47,11 +47,11 @@ templates['transactions'] = template({"1":function(container,depth0,helpers,part
 templates['wallet'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"logged_header main_header single\">\n    <h1>\n        <span class=\"pull-right ltc-balance hidden-xs\" id=\"ltc-balance\">0.0000 "
+  return "<div class=\"logged_header main_header single\">\n    <div class=\"balance-container container\">\n        <span class=\"pull-right ltc-balance\" id=\"ltc-balance\">0.0000 "
     + alias4(((helper = (helper = helpers.coin_symbol || (depth0 != null ? depth0.coin_symbol : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"coin_symbol","hash":{},"data":data}) : helper)))
-    + "</span>\n    </h1>\n\n    <div class=\"container\">\n        <!-- Nav tabs -->\n        <ul class=\"nav nav-tabs\" role=\"tablist\">\n            <li><a href=\"#home\" role=\"tab\" data-toggle=\"tab\">"
+    + "</span>\n    </div>\n\n    <div class=\"container logged-in-bar\" >\n        <!-- Nav tabs -->\n        <ul class=\"nav nav-tabs\" role=\"tablist\">\n            <!-- <li><a href=\"#home\" role=\"tab\" data-toggle=\"tab\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Home",{"name":"i18n","hash":{},"data":data}))
-    + "</a></li>\n            <li><a href=\"#tab_transactions\" role=\"tab\" data-toggle=\"tab\">"
+    + "</a></li> -->\n            <li><a href=\"#tab_transactions\" role=\"tab\" data-toggle=\"tab\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Transactions",{"name":"i18n","hash":{},"data":data}))
     + "</a></li>\n            <li><a href=\"#tab_send_coins\" role=\"tab\" data-toggle=\"tab\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Send",{"name":"i18n","hash":{},"data":data}))
@@ -61,9 +61,11 @@ templates['wallet'] = template({"compiler":[7,">= 4.0.0"],"main":function(contai
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Import/Export",{"name":"i18n","hash":{},"data":data}))
     + "</a></li>\n            <li><a href=\"#tab_settings\" role=\"tab\" data-toggle=\"tab\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Settings",{"name":"i18n","hash":{},"data":data}))
-    + "</a></li>\n        </ul>\n    </div>\n</div>\n<div class=\"container\">\n    <br><br>\n    <div class=\"row\">\n        <div class=\"col-xs-12\" id=\"alerts-section\">\n\n        </div>\n    </div>\n    <!-- Tab panes -->\n    <div class=\"tab-content\">\n        <div class=\"tab-pane\" id=\"home\">...</div>\n        <div class=\"tab-pane\" id=\"tab_transactions\">\n            <h4>"
+    + "</a></li>\n        </ul>\n    </div>\n</div>\n<div class=\"container\">\n    <br><br>\n    <div class=\"row\">\n        <div class=\"col-xs-12\" id=\"alerts-section\">\n\n        </div>\n    </div>\n\n\n    <!-- Tab panes -->\n    <div class=\"tab-content\">\n        <div class=\"tab-pane\" id=\"home\">...</div>\n        <div class=\"tab-pane\" id=\"tab_transactions\">\n            <h4>"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Your Transactions",{"name":"i18n","hash":{},"data":data}))
-    + "</h4>\n\n            <table id=\"list-transactions-outer\" class=\"table table-bordered\">\n                <thead>\n                <th>"
+    + "</h4>\n\n            <div id=\"list-transactions\" class=\"container\">\n              "
+    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Error loading transactions?",{"name":"i18n","hash":{},"data":data}))
+    + "\n            </div>\n            <!-- <table id=\"list-transactions-outer\" class=\"table table-responsive table-bordered\">\n                <thead>\n                <th>"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Date",{"name":"i18n","hash":{},"data":data}))
     + "</th>\n                <th>"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Amount",{"name":"i18n","hash":{},"data":data}))
@@ -75,19 +77,13 @@ templates['wallet'] = template({"compiler":[7,">= 4.0.0"],"main":function(contai
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"View",{"name":"i18n","hash":{},"data":data}))
     + "</th>\n                </thead>\n                <tbody id=\"list-transactions\">\n                    <tr><td colspan=\"5\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Error loading transactions?",{"name":"i18n","hash":{},"data":data}))
-    + "</td></tr>\n                </tbody>\n            </table>\n        </div>\n        <div class=\"tab-pane active\" id=\"tab_addresses\">\n\n            <table id=\"list-addresses-outer\" class=\"table table-bordered\">\n                <thead>\n                <th>"
-    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Address",{"name":"i18n","hash":{},"data":data}))
-    + "</th>\n                <th>"
-    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Balance",{"name":"i18n","hash":{},"data":data}))
-    + "</th>\n                <th>"
-    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Options",{"name":"i18n","hash":{},"data":data}))
-    + "</th>\n                <th>"
-    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Delete?",{"name":"i18n","hash":{},"data":data}))
-    + "</th>\n                </thead>\n                <tbody id=\"list-addresses\">\n                    <tr><td colspan=\"4\">"
-    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Error loading addresses?",{"name":"i18n","hash":{},"data":data}))
-    + "</td></tr>\n                </tbody>\n            </table>\n\n            <button id=\"generate-btn\" class=\"btn btn-default\">"
+    + "</td></tr>\n                </tbody>\n            </table> -->\n\n\n        </div>\n\n        <div class=\"tab-pane active\" id=\"tab_addresses\">\n          <button class=\"btn btn-default generate-btn\" >"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Generate New Address",{"name":"i18n","hash":{},"data":data}))
-    + "</button>\n        </div>\n        <div class=\"tab-pane\" id=\"tab_send_coins\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <div class=\"alert alert-danger\">"
+    + "</button>\n          <div id=\"list-addresses\" class=\"container\">\n            "
+    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Error loading addresses?",{"name":"i18n","hash":{},"data":data}))
+    + "\n          </div>\n            <button class=\"btn btn-default generate-btn\">"
+    + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Generate New Address",{"name":"i18n","hash":{},"data":data}))
+    + "</button>\n        </div>\n\n        <div class=\"tab-pane\" id=\"tab_send_coins\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <div class=\"alert alert-danger\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Note: You will get an error if you try to send multiple transactions in a short period of time. This is because you cannot send unconfirmed coins yet.",{"name":"i18n","hash":{},"data":data}))
     + "</div>\n\n\n                    <!-- <h4>Exchange Rates</h4>\n                    <ul id=\"exchange-rates\">\n                        <li>Under Construction</li>\n                    </ul> -->\n                </div>\n\n                <div class=\"col-md-6\">\n                    <h4>"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Send",{"name":"i18n","hash":{},"data":data}))
@@ -105,7 +101,7 @@ templates['wallet'] = template({"compiler":[7,">= 4.0.0"],"main":function(contai
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Import",{"name":"i18n","hash":{},"data":data}))
     + "</h4>\n                    <div class=\"input-group\">\n                        <p class=\"form-control-static\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Import Key (WIF)",{"name":"i18n","hash":{},"data":data}))
-    + "</p>\n                    </div>\n                    <div class=\"input-group\">\n                        <input type=\"text\" class=\"form-control\" id=\"import-address\" />\n                    </div>\n                    <button class=\"btn btn-default\" id=\"import-btn\">"
+    + "</p>\n                    </div>\n                    <div class=\"input-group\">\n                        <input type=\"text\" class=\"form-control\" id=\"import-address\" size=50/>\n                    </div>\n                    <button class=\"btn btn-default\" id=\"import-btn\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Import",{"name":"i18n","hash":{},"data":data}))
     + "</button>\n                </div>\n                <div class=\"col-md-9\">\n                    <h4>"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Export",{"name":"i18n","hash":{},"data":data}))
@@ -195,7 +191,7 @@ templates['wallet'] = template({"compiler":[7,">= 4.0.0"],"main":function(contai
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Close",{"name":"i18n","hash":{},"data":data}))
     + "</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal fade\" id=\"qrcodeModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"qrcodeModalLabel\"\n         aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span\n                            aria-hidden=\"true\">&times;</span></button>\n                    <h4 class=\"modal-title\" id=\"qrcodeModalLabel\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"QR Code",{"name":"i18n","hash":{},"data":data}))
-    + "</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"text-center\">\n                        <img src=\"\" id=\"qrcode-img\" alt=\"\" width=\"200\" height=\"200\"/><br/>\n                        <strong id=\"qrcode-address\"></strong>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">"
+    + "</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"text-center\">\n                        <div id=\"address-qr\"></div><br/>\n                        <strong id=\"qrcode-address\"></strong>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">"
     + alias4((helpers.i18n || (depth0 && depth0.i18n) || alias2).call(alias1,"Cancel",{"name":"i18n","hash":{},"data":data}))
     + "</button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>\n";
 },"useData":true});
