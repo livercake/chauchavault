@@ -148,5 +148,9 @@
 	"We love Open Source software as much as you do, which is why we have all of our source code publicly available for you ": "We love Open Source software as much as you do, which is why we have all of our source code publicly available for you ",
 	"on GitHub.": "on GitHub.",
 	"ChauchaVault is extremely easy to use, send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software.": "ChauchaVault is extremely easy to use, send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software.",
-	"ChauchaVault is extremely easy to use: send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software.": "ChauchaVault is extremely easy to use: send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software."
+	"ChauchaVault is extremely easy to use: send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software.": "ChauchaVault is extremely easy to use: send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software.",
+	"on December 2017. With a coat of paint from": "on December 2017. With a coat of paint from",
+	"ChauchaVault is the first, greatest, and most awesome way to make and receive quick payments": "ChauchaVault is the first, greatest, and most awesome way to make and receive quick payments",
+	"on December 2017. With a coat of paint from ": "on December 2017. With a coat of paint from ",
+	"ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA": "ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA"
 }
