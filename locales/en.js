@@ -162,5 +162,12 @@
 	" - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT).": " - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT).",
 	" - a well known online Bitcoin wallet*.": " - a well known online Bitcoin wallet*.",
 	"When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the": "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the",
-	", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions.": ", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."
+	", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions.": ", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions.",
+	"and then forked into ChauchaVault by": "and then forked into ChauchaVault by",
+	"thus becoming the first, greatest, and most awesome way to make and receive quick payments with your CHA": "thus becoming the first, greatest, and most awesome way to make and receive quick payments with your CHA",
+	"and then in December 2017 forked into ChauchaVault by": "and then in December 2017 forked into ChauchaVault by",
+	", thus becoming the first, greatest, and most awesome way to make and receive quick payments with your CHA": ", thus becoming the first, greatest, and most awesome way to make and receive quick payments with your CHA",
+	", thus becoming the first – greatest – and most awesome way to make and receive quick payments with your CHA": ", thus becoming the first – greatest – and most awesome way to make and receive quick payments with your CHA",
+	", with the mission of becoming the greatest – and most awesome way to make and receive quick payments with your CHA": ", with the mission of becoming the greatest – and most awesome way to make and receive quick payments with your CHA",
+	", with the mission of becoming the easiest and most awesome way to make and receive quick payments with your CHA": ", with the mission of becoming the easiest and most awesome way to make and receive quick payments with your CHA"
 }

@@ -65,6 +65,13 @@ a:hover {
   color: #333;
 }
 
+.navbar-brand {
+  margin-right: -10px;
+}
+.navbar-default .navbar-brand:hover {
+  background-color: #444;
+}
+
 .hero-welcome h1 {
   letter-spacing: 0px;
   color: #444;
@@ -97,37 +104,37 @@ a:hover {
   margin: 15px auto 45px;
 }
 
-.home-section {
-  padding: 50px 0;
+.content-section {
   font-size: 15px;
   line-height: 175%;
   letter-spacing: 0.5px;
 }
 
-.info_box {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.content-section p {
+  padding: 0;
+  line-height: 175%;
+  letter-spacing: -.25px;
 }
 
-.home-section h3 {
+.content-section h3 {
   margin-bottom: 20px;
 }
 
-.home-section p {
+.content-section p {
   padding: 0;
 }
 
-.home-section.shade-background {
+.content-section.shade-background {
 }
 
-.home-section.shade-background a,
-.home-section.accent-color-background a {
+.content-section.shade-background a,
+.content-section.accent-color-background a {
   color: white;
   text-decoration: underline;
   font-weight: 900;
 }
 
-.home-section.neutral-color-background a {
+.content-section.neutral-color-background a {
   color: #e94F37;
 }
 
@@ -146,7 +153,13 @@ a:hover {
 .half-sections-list ul li {
   align-items: center;
   flex: 0 0 50%;
-  padding: 25px 100px;
+  padding: 50px 100px;
+  position: relative;
+  box-shadow: 0 0 1px rgba(0,0,0,.2) inset;
+}
+
+.shade-background.half-sections-list li {
+  box-shadow: 0 0 1px rgba(255,255,255,.2) inset;
 }
 
 .half-sections-list ul li small {
