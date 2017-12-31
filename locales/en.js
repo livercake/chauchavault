@@ -152,5 +152,7 @@
 	"on December 2017. With a coat of paint from": "on December 2017. With a coat of paint from",
 	"ChauchaVault is the first, greatest, and most awesome way to make and receive quick payments": "ChauchaVault is the first, greatest, and most awesome way to make and receive quick payments",
 	"on December 2017. With a coat of paint from ": "on December 2017. With a coat of paint from ",
-	"ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA": "ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA"
+	"ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA": "ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA",
+	"ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator not releasing the funds, or the vendor not releasing the goods.": "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator not releasing the funds, or the vendor not releasing the goods.",
+	"ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether.": "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether."
 }
