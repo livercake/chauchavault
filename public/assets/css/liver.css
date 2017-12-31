@@ -163,13 +163,13 @@ a:hover {
   flex: 0 0 50%;
   padding: 75px 100px;
   position: relative;
-  border-right: 1px solid rgba(0,0,0,.1);
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-right: 1px solid #E0E1D6;
+  border-bottom: 1px solid #E0E1D6;
 }
 
 .shade-background.half-sections-list li {
-  border-right: 1px solid rgba(255,255,255,.1);
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-right: 1px solid #73A8D4;
+  border-bottom: 1px solid #73A8D4;
 }
 
 .half-sections-list ul li small {
