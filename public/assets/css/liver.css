@@ -2,6 +2,15 @@ body.liver-remix {
   font-family: 'Helvetica Neue', 'Helvetica', 'Calibri', sans;
 }
 
+a {
+  color: #10533e;
+}
+
+a:hover {
+  color: #10533e;
+  text-decoration: underline;
+}
+
 /*cherry*/
 .accent-color {
   color: #E94F37;
@@ -136,6 +145,16 @@ body.liver-remix {
   padding: 25px 100px;
 }
 
+.half-sections-list ul li small {
+  font-size: 9px;
+  line-height: 13px;
+  display: block;
+  color: rgba(0,0,0,.66);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: normal;
+}
+
 @media all and (max-width: 990px) {
   .half-sections-list ul li {
     flex: 100%;
@@ -143,10 +162,42 @@ body.liver-remix {
   }
 }
 
+.half-sections-list ul li h3 {
+  font-size: 26px;
+  overflow: hidden;
+}
+
 .half-sections-list ul li h3 .fa {
-  margin-right: 15px;
   font-size: 42px;
-  line-height: 30px;
+  margin-bottom: 30px;
+  display: block;
+}
+.half-sections-list ul li h3 span {
+  overflow: hidden;
+}
+
+.full-screen-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.full-screen-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.full-screen-section blockquote {
+  border: none;
+  padding: 0;
+  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, sans;
+  font-size: 36px;
+  letter-spacing: -1px;
+  line-height: 145%;
+}
+
+.full-screen-section blockquote footer {
+  margin-top: 30px;
 }
 
 .footer {

@@ -1,5 +1,5 @@
 
-  <div class="hero-welcome home-section text-center">
+<div class="hero-welcome home-section text-center">
     <figure class="hero-logo">
       <img src="/assets/images/logo-XL.png" alt="">
     </figure>
@@ -14,21 +14,20 @@
     </div>
   </div>
 
-
 <div class="home-section shade-background half-sections-list">
   <ul>
     <li class="info_box">
       <div class="info_box__content">
-        <h3> <i class="fa fa-lock"></i> {{i18n "Secure"}}</h3>
+        <h3> <i class="fa fa-lock"></i> <span></span>{{i18n "Secure"}}</h3>
         <p>
           {{i18n "Your wallet is encrypted before it touches our servers."}}
-          {{i18n "Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds."}}
+          {{i18n "Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds. Your privacy, and the safety of your funds, is guaranteed."}}
         </p>
       </div>
     </li>
     <li class="info_box">
       <div class="info_box__content">
-        <h3> <i class="fa fa-flash"></i> {{i18n "Fast"}}</h3>
+        <h3> <i class="fa fa-flash"></i> <span>{{i18n "Fast"}}</span></h3>
         <p>
           {{i18n "No blockchain download needed, "}} <a href='/wallet/create'> {{i18n "sign up for an account"}}</a> {{i18n "in seconds! Easy, universal access to blazingly-fast server technology delivering reliable transactions instantaneously, worldwide."}}
         </p>
@@ -36,7 +35,7 @@
     </li>
     <li class="info_box">
       <div class="info_box__content">
-        <h3> <i class="fa fa-github"></i> {{i18n "Open"}}</h3>
+        <h3> <i class="fa fa-github"></i> <span>{{i18n "Open"}}</span></h3>
         <p>
             {{i18n "We love Open Source software as much as you do, which is why we have all of our source code publicly available for you "}} <a href="https://github.com/p0ns/ChauchaVault">{{i18n "on GitHub"}}.</a>
         </p>
@@ -44,7 +43,7 @@
     </li>
     <li class="info_box">
       <div class="info_box__content">
-        <h3> <i class="fa fa-heart"></i> {{i18n "Easy"}}</h3>
+        <h3> <i class="fa fa-heart"></i> <span>{{i18n "Easy"}}</span></h3>
         <p>
           {{i18n "ChauchaVault is extremely easy to use: send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software."}}
         </p>
@@ -53,176 +52,45 @@
   </ul>
 </div>
 
+<div class="home-section full-screen-section">
+  <div class="full-screen-content">
+    <blockquote>
+
+      At its core, cryptocurrency is a smart currency, designed by very forward-thinking engineers. It eliminates the need for banks, gets rid of credit card fees, currency exchange fees, money transfer fees, and reduces the need for lawyers in transitions… all good things.
+
+    <footer><cite><a title="Paul Vigna, The Age of Cryptocurrency: How Bitcoin and Digital Money Are Challenging the Global Economic Order" href="https://www.goodreads.com/book/show/22174460-the-age-of-cryptocurrency" target="_blank">Paul Vigna, The Age of Cryptocurrency: How Bitcoin and Digital Money Are Challenging the Global Economic Order</a></cite></footer></blockquote>
+  </div>
+</div>
+
 <div class="home-section neutral-color-background half-sections-list">
   <!-- Info boxes (type 2) -->
 
   <ul>
     <li>
-      <h3>{{i18n "What is ChauchaVault?"}}</h3>
+      <h3> <i class="fa fa-question"></i> <span>{{i18n "What is ChauchaVault?"}}</span></h3>
       <p>
         {{i18n "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether."}}
-        {{i18n "This same system is used by Blockchain.info - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT)."}}
+        {{i18n "This same system is used by"}} <a href="//blockchain.info" target="_blank">Blockchain.info</a>{{i18n " - a well known online Bitcoin wallet*."}}
       </p>
+      <p><small>* We are not affiliated in any way with Blockchain.info, or any other wallet or exchange service.</small></p>
     </li>
     <li>
-      <h3>{{i18n "How does it work?"}}</h3>
+      <h3><i class="fa fa-cog"></i> <span>{{i18n "How does it work?"}}</span></h3>
       <p>
-        {{i18n "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the AES algorithm, your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."}}
+        {{i18n "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the"}} <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES algorithm</a> {{i18n ", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."}}
       </p>
     </li>
     <li>
-      <h3>{{i18n "Who made ChauchaVault?"}}</h3>
+      <h3><i class="fa fa-user"></i> <span>{{i18n "Who made ChauchaVault?"}}</span></h3>
       <p>
         {{i18n "LiteVault was made by"}} <a href="http://someguy123.com">Someguy123</a> {{i18n "and then was forked into ChauchaVault by"}} <a href="http://p0ns.org">p0ns</a> {{i18n "on December 2017. With a coat of paint from "}}<a href="//livercake.github.io">livercake</a>, {{i18n "ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA"}}.
       </p>
     </li>
     <li>
-      <h3>{{i18n "What technology was used?"}}</h3>
+      <h3><i class="fa fa-server"></i> <span>{{i18n "What kind of technology was used?"}}</span></h3>
       <p>
         {{i18n "The backend was built in Node.JS, For the frontend Bootstrap was used (and completely re-styled) for the HTML and CSS to ensure a good, responsive layout was possible, allowing the website to work well on mobiles, tablets and computers."}}
       </p>
     </li>
   </ul>
-</div>
-
-
-<div class="hide">
-
-<div id="slide_1">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12">
-
-                <!-- Info boxes -->
-                <br><br>
-                <br><br>
-                <div class="row">
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <div class="row info_box">
-                            <div class="col-xs-2"><img src="/assets/images/lock-icon.png" class="stretch-to-col"></div>
-                            <div class="col-xs-10">
-                                <h3>{{i18n "Secure"}}</h3>
-                                <p>
-                                    {{i18n "Your wallet is encrypted before it touches our servers."}}
-                                    {{i18n "Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds."}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <div class="row info_box">
-                            <div class="col-xs-2 col-xs-3"><img src="/assets/images/time-icon.png" class="stretch-to-col"></div>
-                            <div class="col-xs-10">
-                                <h3>{{i18n "Fast"}}</h3>
-                                <p>
-                                    {{i18n "No blockchain download needed"}} <a href='/wallet/create'> {{i18n "sign up for an account"}}</a> {{i18n "in less than 10 seconds"}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <div class="row info_box">
-                            <div class="col-xs-2"><img src="/assets/images/open-icon.png" class="stretch-to-col"></div>
-                            <div class="col-xs-10">
-                                <h3>{{i18n "Open"}}</h3>
-                                <p>
-                                    {{i18n "We love Open Source software as much as you do, which is why we have all of our source code publicly available for you to investigate"}} <a href="https://github.com/p0ns/ChauchaVault">{{i18n "on GitHub"}}</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <div class="row info_box">
-                            <div class="col-xs-2"><img src="/assets/images/easy-icon.png" class="stretch-to-col"></div>
-                            <div class="col-xs-10">
-                                <h3>{{i18n "Easy"}}</h3>
-                                <p>
-                                    {{i18n "ChauchaVault is extremely easy to use, send and receive Chauchas without downloading any software"}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End info boxes -->
-        </div>
-    </div>
-    <br><br>
-    <br><br>
-</div>
-<!-- End slide_1 -->
-
-<!-- Start slide_2 -->
-
-<div id="slide_3">
-    <div class="container">
-        <div class="row">
-
-            <!-- Header -->
-            <div class="slide_header">
-                <h1 class="text-center">FAQ</h1>
-            </div>
-
-            <!-- Info boxes (type 2) -->
-            <div class="row index_faq">
-                <div class="col-sm-5 col-sm-offset-1 info_box">
-                    <h3>{{i18n "What is ChauchaVault?"}}</h3>
-                    <p>
-                      {{i18n "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator running with the funds."}}
-                      {{i18n "This same system is used by Blockchain.info - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT)."}}
-                    </p>
-                </div>
-                <div class="col-sm-5 info_box">
-                    <h3>{{i18n "How does it work?"}}</h3>
-                    <p>
-                        {{i18n "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the AES algorithm, your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."}}
-                    </p>
-                </div>
-            </div>
-            <div class="row index_faq">
-                <div class="col-sm-5 col-sm-offset-1 info_box">
-                    <h3>{{i18n "Who made ChauchaVault?"}}</h3>
-                    <p>
-                        {{i18n "LiteVault was made by"}} <a href="http://someguy123.com">Someguy123</a> {{i18n "and then was forked into ChauchaVault by"}} <a href="http://p0ns.org">p0ns</a>.<br />
-                    </p>
-                </div>
-                <div class="col-sm-5 info_box">
-                    <h3>{{i18n "What technology was used?"}}</h3>
-                    <p>
-                        {{i18n "The backend was built in Node.JS, For the frontend Bootstrap was used (and completely re-styled) for the HTML and CSS to ensure a good, responsive layout was possible, allowing the website to work well on mobiles, tablets and computers."}}
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- End info boxes -->
-    </div>
-    <br><br><br>
-</div>
-<!--
-SOCIAL SLIDE
-<div class="row">
-    <div class="col-xs-12 col-sm-4 text-center">
-        <a href="https://twitter.com/someguy123" target="_blank">
-            <i class="fa fa-twitter fa-5x"></i>
-            <h3>ChauchaVault on Twitter</h3>
-        </a>
-
-    </div>
-    <div class="col-xs-12 col-sm-4 text-center">
-        <a href="https://litecointalk.org/index.php?topic=24092" target="_blank">
-            <i class="fa fa-comments fa-5x"></i>
-            <h3>Litecointalk Thread</h3>
-        </a>
-    </div>
-    <div class="col-xs-12 col-sm-4 text-center">
-        <a href="http://www.reddit.com/r/litecoin/comments/2r6dbf/its_finally_here_ChauchaVault_a_trustless_wallet/" target="_blank">
-            <i class="fa fa-reddit fa-5x"></i>
-            <h3>Reddit Thread</h3>
-        </a>
-    </div>
-</div>
--->
-
 </div>

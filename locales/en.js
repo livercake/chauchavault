@@ -154,5 +154,13 @@
 	"on December 2017. With a coat of paint from ": "on December 2017. With a coat of paint from ",
 	"ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA": "ChauchaVault became the first, greatest, and most awesome way to make and receive quick payments with your CHA",
 	"ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator not releasing the funds, or the vendor not releasing the goods.": "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator not releasing the funds, or the vendor not releasing the goods.",
-	"ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether.": "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether."
+	"ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether.": "ChauchaVault is an online wallet service which uses in-browser cryptography to reduce the risk of the coin operator witholding the funds, or hijacking them altogether.",
+	"What kind of technologies were used?": "What kind of technologies were used?",
+	"What kind of technology was used?": "What kind of technology was used?",
+	"Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds. Your privacy, and the safety of your funds, is guaranteed.": "Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds. Your privacy, and the safety of your funds, is guaranteed.",
+	"This same system is used by": "This same system is used by",
+	" - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT).": " - a well known online Bitcoin wallet (UNAFFILIATED WITH CHAUCHAVAULT).",
+	" - a well known online Bitcoin wallet*.": " - a well known online Bitcoin wallet*.",
+	"When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the": "When you login to ChauchaVault, your browser sends your identifier to our server, we return an encrypted version of your wallet with the",
+	", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions.": ", your browser then decrypts this using your password (which is never sent to the server) to load your private keys used to sign transactions."
 }
