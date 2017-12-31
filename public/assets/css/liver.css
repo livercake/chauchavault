@@ -127,6 +127,10 @@ a:hover {
   font-weight: 900;
 }
 
+.home-section.neutral-color-background a {
+  color: #e94F37;
+}
+
 .action-buttons {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -189,7 +193,7 @@ a:hover {
 
 .full-screen-section blockquote {
   border: none;
-  padding: 0;
+  padding: 0 15px;
   font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, sans;
   font-size: 36px;
   letter-spacing: -1px;
