@@ -7,8 +7,10 @@
     <h3 class="text-center">{{i18n "the "}} <span class="accent-color">{{i18n "trustless"}}</span> {{i18n "online wallet for Chaucha"}}</h3>
     <!-- Login/signup -->
     <div class="row action-buttons">
-        <div class="col-md-2 col-md-offset-3 col-xs-6 home-button-container"><a href="/wallet/login" class="btn btn-primary form-control">{{i18n "Login"}}</a></div>
-        <div class="col-md-2 col-md-offset-2 col-xs-6 home-button-container"><a href="/wallet/create" class="btn btn-white form-control">{{i18n "Register"}}</a></div>
+      <div class="col-md-6 col-md-offset-3">
+        <a href="/wallet/login" class="btn btn-lg btn-primary">{{i18n "Login"}}</a>
+        <a href="/wallet/create" class="btn btn-lg btn-default">{{i18n "Register"}}</a>
+      </div>
     </div>
   </div>
 
@@ -17,7 +19,7 @@
   <ul>
     <li class="info_box">
       <div class="info_box__content">
-        <h3>{{i18n "Secure"}}</h3>
+        <h3> <i class="fa fa-lock"></i> {{i18n "Secure"}}</h3>
         <p>
           {{i18n "Your wallet is encrypted before it touches our servers."}}
           {{i18n "Unlike other Chaucha wallet services, we NEVER see your private keys, and are unable to access your funds."}}
@@ -26,7 +28,7 @@
     </li>
     <li class="info_box">
       <div class="info_box__content">
-        <h3>{{i18n "Fast"}}</h3>
+        <h3> <i class="fa fa-flash"></i> {{i18n "Fast"}}</h3>
         <p>
           {{i18n "No blockchain download needed, "}} <a href='/wallet/create'> {{i18n "sign up for an account"}}</a> {{i18n "in seconds! Easy, universal access to blazingly-fast server technology delivering reliable transactions instantaneously, worldwide."}}
         </p>
@@ -34,7 +36,7 @@
     </li>
     <li class="info_box">
       <div class="info_box__content">
-        <h3>{{i18n "Open"}}</h3>
+        <h3> <i class="fa fa-github"></i> {{i18n "Open"}}</h3>
         <p>
             {{i18n "We love Open Source software as much as you do, which is why we have all of our source code publicly available for you "}} <a href="https://github.com/p0ns/ChauchaVault">{{i18n "on GitHub"}}.</a>
         </p>
@@ -42,7 +44,7 @@
     </li>
     <li class="info_box">
       <div class="info_box__content">
-        <h3>{{i18n "Easy"}}</h3>
+        <h3> <i class="fa fa-heart"></i> {{i18n "Easy"}}</h3>
         <p>
           {{i18n "ChauchaVault is extremely easy to use: send and receive Chauchas from your browser on computer and mobile, all without downloading any additional software."}}
         </p>

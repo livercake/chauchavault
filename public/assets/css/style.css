@@ -165,45 +165,6 @@ input.form-control {
     line-height: 160px;
 }
 /*
- * BTN
- */
-.btn {
-    border-radius: 0;
-    padding: 8px;
-    border:0;
-    font-size: 16px;
-    line-height: 1.1;
-}
-.btn-primary {
-    background: #2AE4A9;
-}
-.btn-primary:hover, .btn-default:hover {
-    background: #555;
-    color: white;
-}
-.btn-primary, .btn-white {
-    font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size:20px;
-    padding-top:16px;
-}
-.btn-default {
-    font-family: "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    background: #2AE4A9;
-    color: white;
-}
-.
-.btn-white {
-    color:black;
-    background: lightgray;
-}
-.btn-white:hover {
-
-    background: #F71568;
-}
-
-/*
  * SLIDE 1
  */
 #slide_1 {
