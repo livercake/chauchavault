@@ -169,5 +169,11 @@
 	", thus becoming the first, greatest, and most awesome way to make and receive quick payments with your CHA": ", thus becoming the first, greatest, and most awesome way to make and receive quick payments with your CHA",
 	", thus becoming the first – greatest – and most awesome way to make and receive quick payments with your CHA": ", thus becoming the first – greatest – and most awesome way to make and receive quick payments with your CHA",
 	", with the mission of becoming the greatest – and most awesome way to make and receive quick payments with your CHA": ", with the mission of becoming the greatest – and most awesome way to make and receive quick payments with your CHA",
-	", with the mission of becoming the easiest and most awesome way to make and receive quick payments with your CHA": ", with the mission of becoming the easiest and most awesome way to make and receive quick payments with your CHA"
+	", with the mission of becoming the easiest and most awesome way to make and receive quick payments with your CHA": ", with the mission of becoming the easiest and most awesome way to make and receive quick payments with your CHA",
+	"Why should I use this wallet, above all others?": "Why should I use this wallet, above all others?",
+	"Why should I use this wallet, instead of any other?": "Why should I use this wallet, instead of any other?",
+	"Our wallet service is one of the most secure online wallets available for Chaucha – we use a trustless model: meaning your wallet is encrypted and <em>always</em> kept in your browser. this way, we cannot access your funds, see your balance, or lock you into our service, you remain in complete control of your private keys, just like a desktop wallet.": "Our wallet service is one of the most secure online wallets available for Chaucha – we use a trustless model: meaning your wallet is encrypted and <em>always</em> kept in your browser. this way, we cannot access your funds, see your balance, or lock you into our service, you remain in complete control of your private keys, just like a desktop wallet.",
+	"You're all set!": "You're all set!",
+	"You can now log into ChauchaVault.": "You can now log into ChauchaVault.",
+	"Here is your identifier, please keep this safe or you may lose access to your coins:": "Here is your identifier, please keep this safe or you may lose access to your coins:"
 }

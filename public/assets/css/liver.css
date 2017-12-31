@@ -13,6 +13,10 @@ a:hover {
   text-decoration: underline;
 }
 
+h1, h2, h3, h4 {
+  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica Arial, sans-serif;
+}
+
 /*cherry*/
 .accent-color {
   color: #E94F37;
@@ -60,7 +64,7 @@ a:hover {
 
 #navbar {
   overflow: hidden;
-  font-family: 'Titillium Web';
+  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .nav>li {
   margin-right: -10px;
@@ -97,7 +101,7 @@ a:hover {
 
 .hero-welcome h3, .hero-welcome h1 small {
   display: block;
-  font-family: 'Titillium Web';
+  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 900;
@@ -181,8 +185,9 @@ a:hover {
 }
 
 .form-group-lg input[type="text"].form-control,
-.form-group-lg input[type="password"].form-control {
-  font-family: 'Titillium Web';
+.form-group-lg input[type="password"].form-control,
+.identifier-field {
+  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 32px;
   padding: 5px 10px;
   height: 60px;
@@ -204,8 +209,15 @@ a:hover {
 }
 
 .accent-color-background-reverse.half-sections-list li {
-border-top: 1px solid #EEE;
-border-color: #EEE;
+  border-top: 1px solid #EEE;
+  border-color: #EEE;
+}
+.accent-color-background-reverse.half-sections-list li p {
+  color: #6c6c6c;
+}
+.accent-color-background-reverse.half-sections-list li p a {
+  color: black;
+  text-decoration: underline;
 }
 
 .half-sections-list ul li small {
@@ -232,6 +244,7 @@ border-color: #EEE;
 .half-sections-list ul li h3 {
   font-size: 26px;
   overflow: hidden;
+  line-height: 165%;
 }
 
 .half-sections-list ul li h3 .fa {
@@ -268,6 +281,14 @@ border-color: #EEE;
   .full-screen-section blockquote {
     font-size: 21px;
   }
+}
+
+.password-verdict {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 21px;
+  font-family: 'Press Start 2P', cursive;
+  margin: 10px 0px 0 0;
+  display: block;
 }
 
 .full-screen-section blockquote footer {
@@ -341,4 +362,71 @@ border-color: #EEE;
   margin: 0 0 0 55px;
   letter-spacing: -0.5px;
   font-size: 42px;
+}
+
+
+/* Bootstrap Modal */
+.modal-header {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 29px;
+  letter-spacing: -0.5px;
+  border: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.modal-header .fa {
+  margin-right: 15px;
+}
+
+.modal-header .close {
+  margin-right: 15px;
+}
+
+.modal-body {
+  padding-top: 0;
+}
+
+#reg-identifier {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+#clipcopy {
+  border: 1px solid #CCC;
+  font-weight: 900;
+  font-size: 12px;
+  font-style: italic;
+  color: #E94F37;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 13px !important;
+}
+
+#clipcopy:hover {
+  text-decoration: none;
+  border-color: transparent;
+  background-color: #E94F37;
+  color: white;
+}
+
+.modal-body {
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-dialog {
+  position: relative;
+}
+
+.modal-dialog .close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  z-index: 90;
 }

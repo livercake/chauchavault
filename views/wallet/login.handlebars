@@ -3,44 +3,43 @@
         <h1>{{i18n "Login"}}</h1>
     </div>
 
-    <div class="content-section accent-color-background-reverse half-sections-list">
-      <ul>
-        <li class="info_box">
-          <div class="info_box__content">
-            <div class="panel-body">
-                <div class="form-horizontal">
-                    <div class="form-group-lg">
-                        <label for="identifier">{{i18n "Identifier"}}</label>
-                        <input type="text" class="form-control" id="identifier-txt" name="identifier"/>
-                    </div>
-                    <div class="form-group-lg">
-                        <label for="password">{{i18n "Password"}}</label>
-                        <input type="password" class="form-control" id="password-txt" name="password"/>
-                    </div>
-                    <hr/>
-                    <div class="form-group-lg">
-                        <button class="btn btn-lg btn-default" id="login-btn">{{i18n "Login"}}</button>
-                        <a href="/wallet/create">
-                            <button class="btn btn-lg btn-primary" id="register-lnk">{{i18n "Register"}}</button>
-                        </a>
-                    </div>
+<div class="content-section accent-color-background-reverse half-sections-list">
+  <ul>
+    <li class="info_box">
+      <div class="info_box__content">
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group-lg">
+                    <label for="identifier">{{i18n "Identifier"}}</label>
+                    <input type="text" class="form-control" id="identifier-txt" name="identifier"/>
+                </div>
+                <div class="form-group-lg">
+                    <label for="password">{{i18n "Password"}}</label>
+                    <input type="password" class="form-control" id="password-txt" name="password"/>
+                </div>
+                <hr/>
+                <div class="form-group-lg">
+                    <button class="btn btn-lg btn-default" id="login-btn">{{i18n "Login"}}</button>
+                    <a href="/wallet/create">
+                        <button class="btn btn-lg btn-primary" id="register-lnk">{{i18n "Register"}}</button>
+                    </a>
                 </div>
             </div>
-          </div>
-        </li>
-        <li class="info_box">
-          <h3> <i class="fa fa-warning"></i> {{i18n "Forgot 2FA"}}</h3>
+        </div>
+      </div>
+    </li>
+    <li class="info_box">
+      <h3> <i class="fa fa-warning"></i> {{i18n "Forgot 2FA"}}</h3>
 
-          <p>{{i18n "Please contact us via the"}} <a href="/contact">{{i18n "Contact Page"}}</a>. {{i18n "There is no automated recovery process right now"}}.</p>
-          <p>{{i18n "You will need to have an email on your account so that we can verify that you are the original owner"}}.</p>
-          <hr>
-          <h3> <i class="fa fa-life-buoy"></i> {{i18n "Lost my password"}}</h3>
-          <!--<a href="/wallet/forgot2fa">Lost 2FA</a>-->
-          <p>{{i18n "Due to the way ChauchaVault works, we CANNOT help you with a lost password, your wallet is encrypted and we don't store the password, or any hash on our servers."}}
-          {{i18n "We can only help you with lost authenticators, or other forms of 2FA."}}</p>
-        </li>
-      </ul>
-    </div>
+      <p>{{i18n "Please contact us via the"}} <a href="/contact">{{i18n "Contact Page"}}</a>. {{i18n "There is no automated recovery process right now"}}.</p>
+      <p>{{i18n "You will need to have an email on your account so that we can verify that you are the original owner"}}.</p>
+      <hr>
+      <h3> <i class="fa fa-life-buoy"></i> {{i18n "Lost my password"}}</h3>
+      <!--<a href="/wallet/forgot2fa">Lost 2FA</a>-->
+      <p>{{i18n "Due to the way ChauchaVault works, we CANNOT help you with a lost password, your wallet is encrypted and we don't store the password, or any hash on our servers."}}
+      {{i18n "We can only help you with lost authenticators, or other forms of 2FA."}}</p>
+    </li>
+  </ul>
 </div>
 
 <div class="modal fade" id="authenticatorModal" tabindex="-1" role="dialog" aria-labelledby="authenticatorModalLabel"

@@ -2,60 +2,69 @@
     <div class="main_header single">
         <h1>{{i18n "Register"}}</h1>
     </div>
-    <br/><br/>
-    <div class="container">
-        <div class="well col-xs-12 col-md-6">
-            <h3>{{i18n "Why should I use your service?"}}</h3>
-            <p>{{i18n "Our wallet service is one of the most secure online wallets available for Chaucha, we use a trustless model, meaning your wallet is encrypted and kept in your browser, this way, we cannot access your funds, see your balance, or lock you into our service, you remain in complete control of your private keys, just like a desktop wallet."}}</p>
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">{{i18n "Register"}}</div>
-                <div class="panel-body">
-                    <div class="form-horizontal">
-                        <div class="form-group-lg">
-                            <label for="password-txt">{{i18n "Email (optional, used for forgot 2FA/Identifier)"}}</label>
-                            <input type="text" class="form-control" id="email-txt" name="email"/>
-                        </div>
-                        <div class="form-group-lg">
-                            <label for="password-txt">{{i18n "Password"}}</label>
-                            <input type="password" class="form-control" id="password-txt" name="password"/>
-                        </div>
-                        <div class="form-group-lg">
-                            <label for="password">{{i18n "Confirm Password"}}</label>
-                            <input type="password" class="form-control" id="password-txt-confirm" name="password-confirm"/>
-                        </div>
-                        <br/>
-                        <div class="form-group-lg">
-                            <button class="btn btn-secondary" id="register-btn">{{i18n "Create Account"}}</button>
-                        </div>
-                    </div>
-                </div>
 
+
+    <div class="content-section accent-color-background-reverse half-sections-list">
+      <ul>
+        <li class="info_box">
+          <div class="info_box__content">
+            <h3>
+              <i class="fa fa-hand-peace-o"></i>
+              {{i18n "Why should I use this wallet, instead of any other?"}}</h3>
+            <p>Our wallet service is one of the most secure online wallets available for Chaucha – we use a trustless model: meaning your wallet is encrypted and <em>always</em> kept in your browser. This way, we (or anyone) cannot access your funds, see your balance, or lock you into our service.</p>
+            <p>You always remain in complete control of your private keys, just like a desktop wallet.</p>
+          </div>
+        </li>
+        <li class="info_box">
+          <div class="panel-body">
+              <div class="form-horizontal">
+                  <div class="form-group-lg">
+                      <label for="password-txt">{{i18n "Email (optional, used for forgot 2FA/Identifier)"}}</label>
+                      <input type="text" class="form-control" id="email-txt" name="email"/>
+                  </div>
+                  <div class="form-group-lg">
+                      <label for="password-txt">{{i18n "Password"}}</label>
+                      <input type="password" class="form-control" id="password-txt" name="password"/>
+                  </div>
+                  <div class="form-group-lg">
+                      <label for="password">{{i18n "Confirm Password"}}</label>
+                      <input type="password" class="form-control" id="password-txt-confirm" name="password-confirm"/>
+                  </div>
+                  <br/>
+                  <div class="form-group-lg">
+                      <button class="btn btn-lg btn-primary" id="register-btn">{{i18n "Create Account"}}</button>
+                  </div>
+              </div>
             </div>
-        </div>
-        <div class="modal fade" id="registeredModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">{{i18n "Successfully Registered"}}</h4>
-                    </div>
-                    <div class="modal-body">
-                        <h3>{{i18n "Thanks for registering"}}</h3>
-                        <p>{{i18n "You may now log into ChauchaVault, here is your identifier, please keep this safe or you may lose access to your coins:"}}</p>
-                        <pre id="reg-identifier"></pre>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n "Close"}}</button>
-                    </div>
-                </div>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<div class="modal fade" id="registeredModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: green;" id="myModalLabel"> <i class="fa fa-check-circle"></i> {{i18n "Successfully Registered"}}</h4>
+            </div>
+            <div class="modal-body">
+                <p><strong>{{i18n "You're all set!"}}</strong></p>
+                <p>Here is your identifier. <strong>Please, keep this <em>safe</em> or you may lose access to your coins</strong>:</p>
+                <pre class="identifier-field" id="reg-identifier"></pre>
+                <small>
+                  <a href="#" id="clipcopy">
+                    <i class="fa fa-clipboard"></i>
+                    copy to clipboard</a>
+                </small>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">{{i18n "Close"}}</button>
             </div>
         </div>
     </div>
-
-
 </div>
+
 <script>
     window.onload = function () {
         $('#password-txt').pwstrength();
