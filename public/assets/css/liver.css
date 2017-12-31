@@ -1,5 +1,6 @@
 body.liver-remix {
   font-family: 'Helvetica Neue', 'Helvetica', 'Calibri', sans;
+  margin-bottom: 0;
 }
 
 a {
@@ -79,8 +80,14 @@ a:hover {
   font-family: 'Press Start 2P', cursive;
 }
 
+@media all and (max-width: 990px) {
+  .hero-welcome h1 {
+    font-size: 24px;
+  }
+}
+
 .hero-welcome .btn {
-  margin: 0 30px;
+  margin: 15px 30px;
 }
 
 .hero-welcome h3, .hero-welcome h1 small {
@@ -194,9 +201,10 @@ a:hover {
 }
 
 .full-screen-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: 30px 0;
 }
 
 .full-screen-content {
@@ -213,10 +221,25 @@ a:hover {
   line-height: 145%;
 }
 
+@media all and (max-width: 990px) {
+  .full-screen-section blockquote {
+    font-size: 21px;
+  }
+}
+
 .full-screen-section blockquote footer {
   margin-top: 30px;
 }
 
 .footer {
   background-color: #393E41;
+  margin: 0;
+  padding: 60px 0;
+  position: static;
+  height: auto;
+  border: none;
+}
+
+@media all and (max-width: 990px) {
+
 }
