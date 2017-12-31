@@ -21,13 +21,17 @@ a:hover {
   background-color: #E94F37;
   color: white;
 }
+.accent-color-background-reverse {
+  background-color: white;
+  color: #E94F37;
+}
 .neutral-color-background {
   background-color: #F6F7EB;
 }
 /*blue*/
 .shade-background {
   background-color: #3F88C5;
-  color: white;
+  color: #e8f1f8;
 }
 
 .liver-remix .btn {
@@ -161,15 +165,47 @@ a:hover {
 .half-sections-list ul li {
   align-items: center;
   flex: 0 0 50%;
-  padding: 75px 100px;
+  padding: 60px 70px;
   position: relative;
   border-right: 1px solid #E0E1D6;
   border-bottom: 1px solid #E0E1D6;
 }
 
+.half-sections-list ul li .panel-body {
+  padding: 0;
+}
+
+.form-group-lg {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-group-lg input[type="text"].form-control,
+.form-group-lg input[type="password"].form-control {
+  font-family: 'Titillium Web';
+  font-size: 32px;
+  padding: 5px 10px;
+  height: 60px;
+}
+.form-group-lg label {
+  text-transform: uppercase;
+  font-family: 'Titillium Web';
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.half-sections-list ul li hr {
+  margin: 60px 0;
+}
+
 .shade-background.half-sections-list li {
   border-right: 1px solid #73A8D4;
   border-bottom: 1px solid #73A8D4;
+}
+
+.accent-color-background-reverse.half-sections-list li {
+border-top: 1px solid #EEE;
+border-color: #EEE;
 }
 
 .half-sections-list ul li small {
@@ -180,6 +216,10 @@ a:hover {
   font-weight: 900;
   font-style: italic;
   letter-spacing: normal;
+}
+
+.accent-color-background .half-sections-list li small {
+  color: white;
 }
 
 @media all and (max-width: 990px) {
@@ -285,4 +325,20 @@ a:hover {
   .footer .footer-left {
     text-align: right;
   }
+}
+
+
+/*Single*/
+
+.main_header.single {
+  background: none;
+  text-align: left;
+  border: none;
+  padding: 15px;
+}
+
+.main_header.single h1 {
+  margin: 0 0 0 55px;
+  letter-spacing: -0.5px;
+  font-size: 42px;
 }
