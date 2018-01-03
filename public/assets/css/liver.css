@@ -35,6 +35,8 @@ h1, h2, h3, h4 {
 }
 .accent-color-background-reverse {
   background-image: url('../images/texture-6.png');
+  background-size: 500px auto;
+  background-repeat: repeat;
   background-color: #f7f7f7;
   color: #E94F37;
 }
