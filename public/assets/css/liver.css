@@ -266,7 +266,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   padding: 30px 0;
-  background-image: url('../images/texture-1.png');
+  /* background-image: url('../images/texture-1.png'); */
   position: relative;
 }
 
@@ -283,8 +283,8 @@ h1, h2, h3, h4 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('../images/texture-1.png'), linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  background-size: 1800% 1800%;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 900% 900%;
   opacity: .24;
 
 -webkit-animation: datecolor 180s linear infinite;
