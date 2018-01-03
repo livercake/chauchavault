@@ -46,6 +46,10 @@ h1, h2, h3, h4 {
   text-shadow: -1px -1px 0px (0,0,0,.5);
 }
 
+.btn:hover {
+  background: #444;
+  color: white;
+}
 .btn-lg {
   padding: 15px 45px;
 }
