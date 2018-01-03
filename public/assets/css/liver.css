@@ -73,10 +73,6 @@ h1, h2, h3, h4 {
   color: #333;
   font-size: 14px;
 }
-
-.navbar-brand {
-  margin-right: -10px;
-}
 .navbar-default .navbar-brand:hover {
   background-color: #444;
 }
@@ -87,10 +83,15 @@ h1, h2, h3, h4 {
   text-shadow: 0 0 1px 0 black;
   font-family: 'Press Start 2P', cursive;
 }
-
+.navbar-header {
+  margin-right: -4px;
+}
 @media all and (max-width: 990px) {
   .hero-welcome h1 {
     font-size: 24px;
+  }
+  .navbar-header {
+    margin-right: 0;
   }
 }
 
@@ -354,7 +355,7 @@ h1, h2, h3, h4 {
 }
 
 .main_header.single h1 {
-  margin: 0 0 0 50px;
+  margin: 0 0 0 52px;
   letter-spacing: -0.5px;
   font-size: 42px;
 }
