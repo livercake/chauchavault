@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900');
+
 body.liver-remix {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Calibri', sans;
   margin-bottom: 0;
+  font-family: 'Nunito Sans';
   overflow-x: hidden;
 }
 
@@ -14,7 +16,6 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica Arial, sans-serif;
 }
 
 /*cherry*/
@@ -39,7 +40,6 @@ h1, h2, h3, h4 {
 }
 
 .liver-remix .btn {
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
   border: none;
   box-shadow: 0 0 1px rgba(0,0,0,.3) inset;
   text-shadow: -1px -1px 0px (0,0,0,.5);
@@ -64,13 +64,11 @@ h1, h2, h3, h4 {
 
 #navbar {
   overflow: hidden;
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .nav>li {
   margin-right: -10px;
 }
 .navbar-default .navbar-nav>li>a {
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-transform: none;
   color: #333;
 }
@@ -187,14 +185,12 @@ h1, h2, h3, h4 {
 .form-group-lg input[type="text"].form-control,
 .form-group-lg input[type="password"].form-control,
 .identifier-field {
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 32px;
   padding: 5px 10px;
   height: 60px;
 }
 .form-group-lg label {
   text-transform: uppercase;
-  font-family: 'Titillium Web';
   color: #444;
   margin-bottom: 10px;
 }
@@ -271,7 +267,6 @@ h1, h2, h3, h4 {
 .full-screen-section blockquote {
   border: none;
   padding: 0 15px;
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, sans;
   font-size: 36px;
   letter-spacing: -1px;
   line-height: 145%;
@@ -286,7 +281,6 @@ h1, h2, h3, h4 {
 .password-verdict {
   font-family: 'Press Start 2P', cursive;
   font-size: 21px;
-  font-family: 'Press Start 2P', cursive;
   margin: 10px 0px 0 0;
   display: block;
 }
@@ -370,7 +364,6 @@ h1, h2, h3, h4 {
   min-height: 110px;
   display: flex;
   align-items: center;
-  font-family: "Comfortaa","Teko", "Titillium Web", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 29px;
   letter-spacing: -0.5px;
   border: none;
