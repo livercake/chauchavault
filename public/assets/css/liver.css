@@ -27,7 +27,8 @@ h1, h2, h3, h4 {
   color: white;
 }
 .accent-color-background-reverse {
-  background-color: white;
+  background-image: url('../images/texture-6.png');
+  background-color: #f7f7f7;
   color: #E94F37;
 }
 .neutral-color-background {
@@ -141,6 +142,8 @@ h1, h2, h3, h4 {
 }
 
 .content-section.shade-background {
+  background-image: url('../images/texture-4.png');
+  text-shadow: 1px 1px 0 rgba(0,0,0,.8);
 }
 
 .content-section.shade-background a,
@@ -259,6 +262,8 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   padding: 30px 0;
+  background-image: url('../images/texture-1.png');
+  background-color: white;
 }
 
 .full-screen-content {
@@ -272,6 +277,11 @@ h1, h2, h3, h4 {
   font-size: 36px;
   letter-spacing: -1px;
   line-height: 145%;
+  text-shadow: 1px 1px 0 white;
+}
+
+.full-screen-section blockquote a {
+  color: #E94F37;
 }
 
 @media all and (max-width: 990px) {
