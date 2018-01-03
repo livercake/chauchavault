@@ -287,27 +287,27 @@ h1, h2, h3, h4 {
   background-size: 1800% 1800%;
   opacity: .24;
 
--webkit-animation: rainbow 60s ease infinite;
--z-animation: rainbow 60s ease infinite;
--o-animation: rainbow 60s ease infinite;
-  animation: rainbow 60s ease infinite;}
+-webkit-animation: datecolor 180s linear infinite;
+-z-animation: datecolor 180s linear infinite;
+-o-animation: datecolor 180s linear infinite;
+  animation: datecolor 180s linear infinite;}
 
-@-webkit-keyframes rainbow {
+@-webkit-keyframes datecolor {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-@-moz-keyframes rainbow {
+@-moz-keyframes datecolor {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-@-o-keyframes rainbow {
+@-o-keyframes datecolor {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-@keyframes rainbow {
+@keyframes datecolor {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
