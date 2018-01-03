@@ -7,7 +7,7 @@ body.liver-remix {
 }
 
 .headroom {
-  transition: transform .3s ease;
+  transition: transform .15s ease;
 }
 .headroom.headroom--unpinned {
   transform: translateY(-50px);
